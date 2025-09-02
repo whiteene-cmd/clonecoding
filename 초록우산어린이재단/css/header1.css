@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+body {
+    padding: 200px 0;
+}
+
+header {
+    position: absolute;
+    left: 0; right: 0;
+    top: 0;
+    background: lightblue;
+}
+
+header .inner{
+    position: relative;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 1040px;
+    background: lightcoral;
+}
+header h1{
+    position: absolute;
+    left: 60px; top: 10px;
+}
+header h1 a{
+    display: block;
+    width: 150px;
+    height: 45px;
+    background: url(../img/imgi_48_logo.png) no-repeat center/contain;
+}
+
+header nav ul{
+    display: flex;
+    width: calc(100%/3);
+    margin-left: 241px;
+}
+header nav ul li{
+    flex: 1;
+}
+header nav ul li a{
+    display: block;
+    line-height: 70px;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    font-weight: 700;
+}
+header nav ul li::before{
+    position: absolute;
+    bottom: 1px;
+    display: block;
+    content: '';
+    width: 0; height: 3px;
+    background: rgb(224, 127, 0);
+    transform: all 0.3s;
+    z-index: 102;
+}
+header nav ul li::before a:hover{
+    width: 105px;
+    
+}
+header nav ul li a:hover{
+    color: rgb(224, 127, 0);
+    transition: all 0.3s;
+}
+.totalNav{
+    position: absolute;
+    top: 70px; left: 0; right: 0;
+    z-index: 101;
+    background: rgba(255, 255, 255,0.5);
+    
+}
+.totalNav > div{
+    padding: 30px 0;
+}
+.totalNav nav{
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+}
+.totalNav nav > ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.totalNav nav > ul > li{
+    flex: 1;
+}
+.totalNav nav > ul>li>a{
+    display: block;
+    text-align: left;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.totalNav nav > ul > li > ul > li{
+    text-align: left;
+    line-height: 2;
+    font-size: 16px;
+    color: #585858;
+}
+.totalNav nav > ul > li > ul > li:hover{
+    color: rgb(0, 0, 0);
+    transition: all 0.3s;
+
+}
+/* info */
+.info{
+    position: absolute;
+    top: 50%; right: 50px;
+    transform: translateY(-50%);
+}
+.info ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.info ul li{
+    display: inline-block;
+}
+.info ul li:nth-child(2):before{
+    content: '';
+    display: block;
+    width: 1px; height: 15px;
+    background: #ffffff;
+    position: absolute;
+    top: 40%; left: 22.5%;
+}
+.info ul li:nth-child(2):after{
+    content: '';
+    display: block;
+    width: 1px; height: 15px;
+    background: #ffffff;
+    position: absolute;
+    top: 40%; left: 44.5%;
+}
+.info ul li>a>span{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.info ul li>a>span:hover{
+    color: #005b48;
+    transition: all 0.3s;
+}
+.info ul li button{
+    border: none;
+    background: goldenrod;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 18px 38px;
+}
+
+
+/* banner */
+.totalNav .bannerBot{
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+.totalNav .bannerBot figure{
+    width: 819px; height: 138px;
+    background: url(../img/초록우산\ 나눔게가.png) no-repeat center/contain;
+}
