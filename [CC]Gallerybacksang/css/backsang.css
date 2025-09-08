@@ -1,6 +1,49 @@
+/* 공통 */
 #wrap{
     padding: 0 40px;
 }
+
+.more {/* btn more */
+    display: flex;
+    width: 164px;
+    padding: 8px;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background-color: yellowgreen;
+    cursor: pointer;
+}
+.more .plusBtn{
+    width: 44px; height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.more .plusBtn img{
+    width: 30%; height: 30%;
+}
+.more p{
+    font-size: 18px;
+    color: #fff; 
+}
+
+section{
+    margin-bottom: 100px;
+}
+section .secTitle{
+    text-align: center;
+    margin-bottom: 50px;
+}
+section .secTitle h3{
+    font-size: 52px;
+    margin-bottom: 100px;
+}
+section .secTitle span{
+    font-size: 20px;
+    display: block;
+    margin-bottom: 30px;
+    color: #c9ab81;
+}
+
 
 /* 메인헤더 영역 */
 header{
@@ -68,14 +111,16 @@ header nav .gnb .gnbInner .gnbsub>li>a>img{
     height: 10%;
 }
 
-/* 서브헤더 영역 */
+/* 메뉴헤더 영역 */
 .menuArea{
+    display: none;
     position: absolute;
     top: 0; left: 0;
     z-index: 100;
     width: 100vw;
     height: 1080px;
     background-color: #211e1f;
+    overflow: hidden;
 }
 .menuArea .menuTop{
     display: flex;
@@ -91,3 +136,243 @@ header nav .gnb .gnbInner .gnbsub>li>a>img{
 .menuArea .menuTop img{
     width: 24px; height: 24px;
 }
+.menuArea .menulist{
+    position: relative;
+    padding: 100px 250px;
+}
+.menulist::after{
+    content: '';
+    position: absolute;
+    top: -14.5%; right: 25%;
+    display: block;
+    width: 1px; height: 1080px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+}
+.menuArea .menulist ul{
+    display: block;
+}
+.menuArea .menulist ul .menu{
+    margin-bottom: 50px;
+}
+.menuArea .menulist ul .num{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.3);
+}
+.menuArea .menulist ul .menuTitle{
+    font-size: 42px;
+    font-weight: 600;
+    color: #fff;
+    padding-left: 24px;
+}
+.menuArea .menulist ul .menu>div{
+    background-color: wheat;
+    width: 450px; height: 450px;
+    position: absolute;
+    right: 10%; top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 서브메뉴영역 */
+.menuArea .menusub{
+    display: none;
+    position: absolute;
+    top: 0; left: 33%;
+    width: 60%; height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.menuArea .menusub.on{
+    display: block;
+}
+.menuArea .menusub>div{
+    position: absolute;
+    top: 23%; 
+    font-size: 32px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    gap: 50px;
+} 
+.menuArea .menusub>a{
+    position: relative;
+}
+.menuArea .menusub>div>a:first-child::before{
+    position: absolute;
+    left: -1px;
+    content: '';
+    display: block;
+    width: 1px; height: 40px;
+    background-color: #ffffff;
+}
+
+.menuArea .backTxt{
+    color: #211e1f;
+    font-size: 170px;
+    margin: -11px;
+    -webkit-text-stroke: 2px rgba(141, 141, 141, 0.1);
+}
+
+/* 메인비주얼 영역 */
+.mainSwiper{
+    width: 100%; height: 767px;
+}
+.swiper-pagination{display: none;}
+.visual1{
+    background: url(../img/imgi_8_20240509_141556_781.jpg) no-repeat center/cover;
+}
+.visual2{
+    background: url(../img/imgi_9_20250718_140357_223.jpg) no-repeat center/cover;
+}
+.visual3{
+    background: url(../img/imgi_10_20240502_133347_809.jpg) no-repeat center/cover;
+}
+.mainSwiper{
+    position: relative;
+}
+.mainSwiper .textBox{
+    position: absolute;
+    bottom: 10%; left: 5%;
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+}
+.mainSwiper .textBox>p{
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.mainSwiper .textBox>h2{
+    font-size: 48px;
+    margin-bottom: 50px;
+}
+
+/* insight영역 */
+#insightArea .innerBox{
+    display: flex; gap: 50px;
+}
+#insightArea .innerBox .pageNum{
+    display: flex;
+    padding: 30px;
+    align-items: center;
+    font-size: 28px;
+    color: #929292;
+    gap: 5px;
+}
+#insightArea .innerBox .pageNum .changeNum{
+    color: #211e1f;
+    font-size: 30px;}
+#insightArea .innerBox .pageNum .fixNum{
+    color: #c9ab81;
+    font-size: 20px;
+}
+.istwrap{
+ display: flex;
+ margin-bottom: 100px;
+}
+.ist{
+    width: 700px;
+    height: 600px;
+}
+.ist img{
+    width: 80%;
+    margin-bottom: 30px;
+}
+.ist .istTxt span{
+    display: block;
+    font-size: 20px;
+    color: #c9ab81;
+    margin-bottom: 20px;
+}
+.ist .istTxt p{
+
+    font-size: 24px;
+
+}
+.ist .istTxt p strong{
+    font-size: 20px;
+}
+
+/* 어바웃 영역 */
+#aboutArea{position: relative; height: 800px;}
+#aboutArea>img{
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 2;
+}
+#aboutArea .innerBox{
+    position: absolute;
+    right: 0; top: 100px;
+    width: 80%; height: 640px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+}
+#aboutArea .innerBox .secTitle{text-align: left;}
+#aboutArea .innerBox .secTitle h3{
+    margin-bottom: 30px;
+}
+#aboutArea .innerBox .infoWrap{
+    position: absolute;
+    top: 15%; right: 25%;
+    padding: 20px;
+}
+#aboutArea .innerBox .infoWrap>p{
+    line-height: 1.6;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+.bdDeco1{
+    position: absolute;
+    top: 50px; right: 50px;
+    font-size: 138px;
+    line-height: 0;
+    font-weight: 600;
+    color: #f8f8f8;
+}
+.bdDeco2{
+    position: absolute;
+    bottom: 2%; right: 3%;
+    font-size: 138px;
+    font-weight: 600;
+    line-height: 1;
+    color: #f8f8f8;
+    -webkit-text-stroke: 2px rgba(141, 141, 141, 0.1);
+}
+
+/* artistArea */
+#artistArea .innerBox{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+#artistArea .innerBox li{
+    position: relative;
+    width: 320px; height: 380px;
+}
+#artistArea .innerBox li img{
+    width: 100%;
+    height: 100%;
+}
+#artistArea .innerBox li .hoverTxt{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#artistArea .innerBox li .hoverTxt p:first-child{
+    font-style: italic;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+#artistArea .innerBox li .hoverTxt p:last-child{
+    font-size: 18px;
+}
+
