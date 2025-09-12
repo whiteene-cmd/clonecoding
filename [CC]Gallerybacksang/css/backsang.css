@@ -4,29 +4,41 @@
 }
 
 .more {/* btn more */
-    display: flex;
-    width: 164px;
-    padding: 8px;
-    align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    background-color: yellowgreen;
+    position: relative;
     cursor: pointer;
-}
-.more .plusBtn{
-    width: 44px; height: 44px;
     display: flex;
+    width: 124px; height: 54px;
     justify-content: center;
     align-items: center;
+    gap: 15px;
+    color: rgba(248, 248, 248,1);
 }
-.more .plusBtn img{
-    width: 30%; height: 30%;
+.more::before{
+    position: absolute;
+    top: 50%; left: -2%;
+    transform: translateY(-50%);
+    content: '';
+    width: 54px; height: 54px;
+    background: rgba(248, 248, 248,0);
+    border: 2px solid rgba(248, 248, 248,0.5);
+    transition: width .3s ease, background .3s ease, border-color .3s ease;
+    z-index: -10;
+}
+.more i{
+    width: 14px; height: 14px;
 }
 .more p{
-    font-size: 20px;
     font-family: "Bebas Neue", sans-serif;
-    color: #fff; 
+    font-size: 20px;
 }
-
+.more:hover::before{
+  width: 124px;
+  background: #fff;
+  border-color: #fff;
+}
+.more:hover{
+  color: #000;                      
+}
 section{
     margin-bottom: 100px;
 }
@@ -37,6 +49,7 @@ section .secTitle{
 section .secTitle h3{
     font-size: 52px;
     font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
     margin-bottom: 100px;
 }
 section .secTitle span{
@@ -296,6 +309,9 @@ header nav .gnb .gnbInner .gnbsub>li>a>img{
 .ist .istTxt p strong{
     font-size: 20px;
 }
+#insightArea .more{
+    margin: auto;
+}
 
 /* 어바웃 영역 */
 #aboutArea{position: relative; height: 800px;}
@@ -356,21 +372,32 @@ header nav .gnb .gnbInner .gnbsub>li>a>img{
 #artistArea .innerBox li{
     position: relative;
     width: 320px; height: 380px;
+    overflow: hidden;
 }
 #artistArea .innerBox li img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    display: block;
 }
 #artistArea .innerBox li .hoverTxt{
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    position: absolute; 
+    inset: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
     color: #fff;
     background-color: rgba(0, 0, 0, 0.7);
+    transition: transform 0.6s ease, opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+#artistArea .innerBox li:hover .hoverTxt{
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;    
 }
 #artistArea .innerBox li .hoverTxt p:first-child{
     font-style: italic;
@@ -429,3 +456,121 @@ header nav .gnb .gnbInner .gnbsub>li>a>img{
 
 /* footer */
 
+footer{
+    width: 100vw;
+    background-color: #211e1f;
+}
+footer .innerBox{
+    width: 1400px;
+    margin: auto;
+    padding: 50px 0;
+    display: flex;
+    flex: 1 1 0;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+.fooLeft .logo{
+    background: url(../img/imgi_22_logo-wht.png)no-repeat center/contain;
+    width: 144px; height: 84px;
+    margin-bottom: 30px;
+}
+.fooLeft .textBox{
+    font-size: 17px;
+}
+.fooLeft .textBox>div{
+    display: flex;
+    align-items: center;
+    color: rgba(248, 248, 248,0.3);
+    line-height: 1.6;
+}
+.fooLeft .textBox>div>p,.fooLeft .textBox>div>span{
+    padding-right: 20px;
+    position: relative;
+}
+.fooLeft .textBox>div>p::after{
+    position: absolute;
+    top: 50%; right: 8px;
+    transform: translateY(-50%);
+    background-color:  rgba(248, 248, 248,0.3);
+    content: '';
+    display: block;
+    width: 1px; height: 14px;
+}
+.privacy{
+    margin-bottom: 20px;
+}
+.privacy p{
+    color: #f8f8f8;
+    font-weight: 600;
+}
+.accordion .sitego{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: rgba(248, 248, 248,0.5);
+    margin-top: 60px;
+    
+}
+.accordion .sitego img{
+    width: 12px; height: 12px;
+}
+.accordion .sitego li{
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-family: "Bebas Neue", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    line-height: 34px;
+    align-items: center;
+    padding: 6px 10px;
+    width: 154px; height: 34px;
+}
+.accordion .sitego .shop{
+    position: absolute;
+    display: none;
+    top: 0; left: 0;
+}
+.accordion .sitego .shop.on{
+    display: block;
+    top: -100%; left: 0;
+}
+.fooRight{
+    width: 40%;
+
+}
+.fooRight h2{
+    color: #f8f8f8;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+.fooRight .write{
+    margin-bottom: 50px;
+}
+.fooRight .write .namephone{
+    display: flex;
+    gap: 15px;
+}
+input{
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+input[type="text"]{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+}
+textarea{
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    background: none;
+    border: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}

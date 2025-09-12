@@ -14,6 +14,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <!-- 폰트어썸 -->
+    <script
+      src="https://kit.fontawesome.com/3da96badf7.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div id="wrap">
@@ -151,7 +156,7 @@
               <p>Mar 05 - Jun 30 2024</p>
               <h2>언-프린티드 아이디어 Un-printed Ideas</h2>
               <div class="more">
-                <div class="plusBtn"><img src="img/plus_w.png" alt="" /></div>
+                <i class="fa-solid fa-plus"></i>
                 <p>VIEW MORE</p>
               </div>
             </div>
@@ -161,7 +166,7 @@
               <p>Jul 11 - Dec 31 2025</p>
               <h2>클림트&고흐 그리고 인상주의展</h2>
               <div class="more">
-                <div class="plusBtn"><img src="img/plus_w.png" alt="" /></div>
+                <i class="fa-solid fa-plus"></i>
                 <p>VIEW MORE</p>
               </div>
             </div>
@@ -171,7 +176,7 @@
               <p>Jan 01 2024 - Jul 10 2025</p>
               <h2>3개의 열정, 3인의 인상파 거장을 마주하다</h2>
               <div class="more">
-                <div class="plusBtn"><img src="img/plus_w.png" alt="" /></div>
+                <i class="fa-solid fa-plus"></i>
                 <p>VIEW MORE</p>
               </div>
             </div>
@@ -237,10 +242,10 @@
             </div>
           </div>
         </div>
-        <!-- <div class="more">
-            <div class="plusBtn"><img src="img/plus_w.png" alt="" /></div>
-            <p>VIEW MORE</p>
-        </div> -->
+        <div class="more">
+          <i class="fa-solid fa-plus"></i>
+          <p>VIEW MORE</p>
+        </div>
       </section>
       <section id="aboutArea">
         <img src="img/imgi_16_about-img01.png" alt="" />
@@ -258,7 +263,7 @@
               높이겠습니다.
             </p>
             <div class="more">
-              <div class="plusBtn"><img src="img/plus_w.png" alt="" /></div>
+              <i class="fa-solid fa-plus"></i>
               <p>VIEW MORE</p>
             </div>
           </div>
@@ -301,7 +306,7 @@
           </li>
         </ul>
         <div class="more">
-          <div class="plusBtn"><img src="img/plus_w.png" alt="" /></div>
+          <i class="fa-solid fa-plus"></i>
           <p>VIEW MORE</p>
         </div>
       </section>
@@ -340,51 +345,63 @@
           </li>
         </ul>
         <div class="more">
-          <div class="plusBtn"><img src="img/plus_w.png" alt="" /></div>
+          <i class="fa-solid fa-plus"></i>
           <p>VIEW MORE</p>
         </div>
       </section>
     </div>
 
     <footer>
-      <div class="fooLeft">
-        <div class="logo"><h1 class="blind">logo</h1></div>
-        <div class="textBox">
-          <div class="privacy">
-            <p>개인정보 처리 방침</p>
-            <span>이용약관</span>
+      <div class="innerBox">
+        <div class="fooLeft">
+          <div class="logo"><h1 class="blind">logo</h1></div>
+          <div class="textBox">
+            <div class="privacy">
+              <p>개인정보 처리 방침</p>
+              <span>이용약관</span>
+            </div>
+            <div class="owner">
+              <p>대표자: 권순상</p>
+              <span>사업자 등록 번호:137-81-30071</span>
+            </div>
+            <div class="address">
+              <p>주소:경기도 고양시 일산동구 산황로 178-15</p>
+              <p>TEL : 070-4156-9541</p>
+              <span>FAX : 031-977-9540</span>
+            </div>
           </div>
-          <div class="owner">
-            <p>대표자: 권순상</p>
-            <span>사업자 등록 번호:137-81-30071</span>
-          </div>
-          <div class="address">
-            <p>주소:경기도 고양시 일산동구 산황로 178-15</p>
-            <p>TEL : 070-4156-9541</p>
-            <p>FAX : 031-977-9540</p>
+          <div class="accordion">
+            <ul class="sitego">
+              <li class="shop on">
+                <span>백상쇼핑몰</span>
+              </li>
+              <li>
+                <span>Family Site</span>
+                <img src="img/down-arrow_op3.png" alt="" />
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="accordion">
-         <div class="sitego"><span>Family Site</span><img src="img/ico_arrow_down.png" alt=""></div>
-         <span>백상쇼핑몰</span>
-        </div>
-      </div>
-      <div class="fooRight">
-        <h2>CONTECT US</h2>
-        <div class="write">
-          <input type="text" placeholder="NAME">
-          <input type="text" placeholder="PHONE">
-          <input type="text" placeholder="E-MAIL">
-          <input type="text" placeholder="TITLE">
-          <input type="text" placeholder="MESSAGE">
-        </div>
-        <div class="more">
-          <div class="plusBtn"><img src="img/plus_w.png" alt="" /></div>
-          <p>VIEW MORE</p>
+        <div class="fooRight">
+          <h2>CONTECT US</h2>
+          <div class="write">
+            <div class="namephone">
+              <input type="text" placeholder="NAME" />
+              <input type="text" placeholder="PHONE" />
+            </div>
+            <input type="text" placeholder="E-MAIL" />
+            <input type="text" placeholder="TITLE" />
+            <textarea type="text">
+MESSAGE
+            </textarea>
+          </div>
+          <div class="more">
+            <i class="fa-solid fa-plus"></i>
+            <p>VIEW MORE</p>
+          </div>
         </div>
       </div>
     </footer>
-
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
