@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/backsang.css" />
 
     <!-- 서브헤더 만들어야함. -->
-    <script src="js/baexsang.js"></script>
+    <script src="js/baexsang.js" defer></script>
     <!-- Link Swiper's CSS -->
     <link
       rel="stylesheet"
@@ -26,17 +26,17 @@
         <div class="logo"><h1 class="blind">갤러리 백상 로고</h1></div>
         <nav>
           <ul class="gnb">
-            <li class="gnbmain">
+            <li class="gnbmain" data-hover="갤러리 소개">
               <a href="#"><span>ABOUT</span></a>
               <div class="gnbInner">
                 <ul class="gnbsub">
-                  <li>
+                  <li data-hover="갤러리 소개">
                     <a href="#"
                       ><span>GREETING</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
                     /></a>
                   </li>
-                  <li>
+                  <li data-hover="갤러리 위치">
                     <a href="#"
                       ><span>LOCATION</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
@@ -45,32 +45,42 @@
                 </ul>
               </div>
             </li>
-            <li class="gnbmain">
+            <li class="gnbmain" data-hover="진행전시">
               <a href="#"><span>EXHIBITION</span></a>
             </li>
-            <li class="gnbmain">
+            <li class="gnbmain" data-hover="보유그림">
               <a href="#"><span>COLLECTION</span></a>
             </li>
-            <li class="gnbmain">
+            <li class="gnbmain" data-hover="정보">
               <a href="#"><span>MAGAZINE</span></a>
               <div class="gnbInner">
                 <ul class="gnbsub">
-                  <li><a href="#">INSIGHT</a></li>
-                  <li><a href="#">ARTIST</a></li>
+                  <li data-hover="깊이보기">
+                    <a href="#"
+                      ><span>INSIGHT</span
+                      ><img src="img/imgi_12_wht-arrow-next.png" alt=""
+                    /></a>
+                  </li>
+                  <li data-hover="아티스트">
+                    <a href="#"
+                      ><span>ARTIST</span
+                      ><img src="img/imgi_12_wht-arrow-next.png" alt=""
+                    /></a>
+                  </li>
                 </ul>
               </div>
             </li>
-            <li class="gnbmain">
+            <li class="gnbmain" data-hover="알림">
               <a href="#"><span>INFO</span></a>
               <div class="gnbInner">
                 <ul class="gnbsub">
-                  <li>
+                  <li data-hover="소식">
                     <a href="#"
                       ><span>NOTICE</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
                     /></a>
                   </li>
-                  <li>
+                  <li data-hover="고객문의">
                     <a href="#"
                       ><span>CONTECT</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
@@ -94,49 +104,57 @@
         </div>
         <div class="menulist">
           <ul>
-            <li class="menu">
+            <li class="menu on">
               <a href="#">
                 <small class="num">01</small>
-                <p class="menuTitle">ABOUT</p>
+                <p class="menuTitle" data-hover="갤러리 소개">ABOUT</p>
                 <div class="menuPic01"></div>
               </a>
             </li>
             <li class="menu">
-              <small class="num">02</small>
-              <p class="menuTitle">EXHIBITION</p>
-              <div class="menuPic02"></div>
+              <a href="#">
+                <small class="num">02</small>
+                <p class="menuTitle" data-hover="진행전시">EXHIBITION</p>
+                <div class="menuPic02"></div>
+              </a>
             </li>
             <li class="menu">
-              <small class="num">03</small>
-              <p class="menuTitle">COLLECTION</p>
-              <div class="menuPic03"></div>
+              <a href="#">
+                <small class="num">03</small>
+                <p class="menuTitle" data-hover="보유그림">COLLECTION</p>
+                <div class="menuPic03"></div>
+              </a>
             </li>
             <li class="menu">
-              <small class="num">04</small>
-              <p class="menuTitle">MAGAZINE</p>
-              <div class="menuPic04"></div>
+              <a href="#">
+                <small class="num">04</small>
+                <p class="menuTitle" data-hover="정보">MAGAZINE</p>
+                <div class="menuPic04"></div>
+              </a>
             </li>
             <li class="menu">
-              <small class="num">05</small>
-              <p class="menuTitle">INFO</p>
-              <div class="menuPic05"></div>
+              <a href="#">
+                <small class="num">05</small>
+                <p class="menuTitle" data-hover="알림">INFO</p>
+                <div class="menuPic05"></div>
+              </a>
             </li>
           </ul>
         </div>
         <div class="menusub">
           <div class="sub01">
-            <a href="#">NOTICE</a>
-            <a href="#">CONTECT</a>
+            <a href="#" data-hover="소식">NOTICE</a>
+            <a href="#" data-hover="고객문의">CONTECT</a>
           </div>
-          <div class="sub02">
+          <div class="sub02" data-hover="진행전시">
             <a href="#">EXHIBITION</a>
           </div>
-          <div class="sub03">
+          <div class="sub03" data-hover="보유그림">
             <a href="#">COLLECTION</a>
           </div>
           <div class="sub04">
-            <a href="#">INSIGHT</a>
-            <a href="#">ARTIST</a>
+            <a href="#" data-hover="깊이보기">INSIGHT</a>
+            <a href="#" data-hover="아티스트">ARTIST</a>
           </div>
           <div class="sub05">
             <a href="">GREETING</a>
@@ -372,12 +390,12 @@
           </div>
           <div class="accordion">
             <ul class="sitego">
-              <li class="shop on">
-                <span>백상쇼핑몰</span>
-              </li>
               <li>
                 <span>Family Site</span>
-                <img src="img/down-arrow_op3.png" alt="" />
+                <img src="img/down-arrow_op3.png" alt="" class="angle" />
+              </li>
+              <li class="shop">
+                <span>백상쇼핑몰</span>
               </li>
             </ul>
           </div>
@@ -392,7 +410,7 @@
             <input type="text" placeholder="E-MAIL" />
             <input type="text" placeholder="TITLE" />
             <textarea type="text">
-MESSAGE
+              MESSAGE
             </textarea>
           </div>
           <div class="more">
@@ -421,6 +439,13 @@ MESSAGE
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+        freeMode: {
+          enabled: true,
+          momentum: true,
+          momentumRatio: 1.1,
+          momentumVelocityRatio: 1.1,
+          sticky: true, // 근처 슬라이드에 달라붙게
+        }, speed: 1000
       });
     </script>
   </body>
