@@ -1,0 +1,121 @@
+:root{
+    --font-main:'Bebas Neue';
+    --main: ##211e1f;
+    --text-smill: #666;
+    --color: #fff
+}
+body{
+    padding: 0 40px;
+    font-family: var(--font-main);
+    font-weight: 400;
+}
+article{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    background: url(../img/about/imgi_7_greeting-topbnr-bg.png) no-repeat center/cover;
+}
+article .title{
+    text-align: center;
+    color: var(--color);
+}
+article .title h2{
+    font-size: 28px; margin-bottom: 15px;
+}
+article .title h3{
+    font-size: 80px;
+    letter-spacing: -4px;
+}
+
+.scroll-down{
+  position:absolute;
+  bottom:0; left:50%;
+  transform:translateX(-50%);
+  color:#fff;
+  display:flex;
+  flex-wrap:wrap;
+  text-align:center;
+  font-size:0;
+}
+
+.scroll-down .txt-wrap,
+.scroll-down .line-wrap{
+  position:relative;
+}
+.scroll-down .txt-wrap span,
+.scroll-down .line-wrap span{
+  display:inline-block;
+}
+
+.scroll-down .txt-wrap{
+  margin-bottom:10px;
+}
+ .scroll-down .txt-wrap span.floating-txt{
+  font-size:20px;
+  font-weight:400;
+  animation: floating 1.5s infinite linear;
+}
+
+.scroll-down .line-wrap{
+  width:100%;
+}
+.scroll-down .line-wrap span.line{
+  width:1px;
+  height:55px;
+  background-color:rgba(255,255,255,.3);
+  position:relative;
+}
+.scroll-down .line-wrap span.line::after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  animation: progress 2.5s infinite linear;
+  background-color: #fff;
+  content: ''
+}
+
+@keyframes progress{
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+.empty{
+  position:relative;
+  width:100%; 
+  height:100vh; 
+  background:gray;
+}
+.empty span{
+  position:absolute;
+  top:50%; 
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:25px;
+  font-weight:600;
+  color:#ffffff;
+}
+
+
+/* gasp */
+
+/* 처음엔 살짝 위쪽(-y) + 투명 */
+.fade-down{
+  opacity: 0;
+  transform: translateY(-16px);
+  will-change: transform, opacity;
+}
+
+/* 모션 줄이기 선호 사용자 배려 */
+@media (prefers-reduced-motion: reduce){
+  .fade-down{ opacity:1 !important; transform:none !important; }
+}
