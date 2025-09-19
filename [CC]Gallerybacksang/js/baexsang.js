@@ -1,5 +1,5 @@
 // 항목별 hover 텍스트: li 또는 span의 data-hover를 우선 사용, 없으면 "baexang"
-(function () {
+/* (function () {
   function wireHoverText(listSelector) {
     document.querySelectorAll(listSelector).forEach((li) => {
       const span = li.querySelector(':scope > a > span');
@@ -14,7 +14,7 @@
       const hoverText =
         li.dataset.hover ||
         span.dataset.hover ||
-        'Baexang';
+        'Baexang' 
 
       // 마우스/키보드 모두 대응
       const show = () => (span.textContent = hoverText);
@@ -25,13 +25,59 @@
       li.addEventListener('focusin', show);
       li.addEventListener('focusout', hide);
     });
-  }
+
+ '
+
+
 
   // 1) 상단 GNB 메인
   wireHoverText('header nav .gnb .gnbmain');
   // 2) 드롭다운 서브
   wireHoverText('header nav .gnb .gnbInner .gnbsub > li');
-})();
+})();  } */
+
+document.addEventListener('DOMContentLoaded', () => {
+  // GNB 안의 모든 li 대상 (메인/서브 모두 커버)
+  const items = document.querySelectorAll('header nav .gnb li');
+
+  items.forEach(li => {
+    // a > span 텍스트 노드 (없어도 동작)
+    const span = li.querySelector('a span');
+
+    // 서브메뉴 후보를 폭넓게 탐색 (구조가 달라도 최대한 잡기)
+    let sub = li.querySelector('.gnbInner');
+    if (!sub) {
+      // 자식 요소 중 서브메뉴로 보이는 ul/컨테이너 추정
+      sub = Array.from(li.children).find(el =>
+        el.matches('.gnbsub, .submenu, ul, .dropdown')
+      ) || null;
+    }
+
+    // 원래 폰트 크기 기억
+    const originalSize =
+      span ? (span.style.fontSize || getComputedStyle(span).fontSize) : '';
+
+    const open = () => {
+      if (sub) sub.style.display = 'block';   // 서브 열기
+      if (span) span.style.fontSize = '18px'; // 텍스트 18px
+    };
+
+    const close = () => {
+      if (sub) sub.style.display = 'none';           // 서브 닫기
+      if (span && originalSize) span.style.fontSize = originalSize; // 복원
+    };
+
+    // 초기 상태: 서브메뉴 숨김
+    if (sub) sub.style.display = 'none';
+
+    // 마우스 + 키보드 접근성 대응
+    li.addEventListener('mouseenter', open);
+    li.addEventListener('mouseleave', close);
+    li.addEventListener('focusin', open);
+    li.addEventListener('focusout', close);
+  });
+});
+
 
 
 
