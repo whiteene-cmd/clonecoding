@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/headerFooter.css" />    
     <link rel="stylesheet" href="css/about.css" />
-    <script src="js/baexsang.js" defer></script>
-
+  
     <script
       src="https://kit.fontawesome.com/3da96badf7.js"
       crossorigin="anonymous"
@@ -16,26 +15,29 @@
     <!-- 1) GSAP + ScrollTrigger 로드 -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script src="js/about.js"></script>
+    <script src="js/headerFooter.js" defer></script>
+    <script src="js/about.js" defer></script>
   </head>
   <body>
     <div id="wrap">
       <header>
-        <div class="logo"><h1 class="blind">갤러리 백상 로고</h1></div>
+        <div class="logo"><a href="index.html">
+          <h1 class="blind">갤러리 백상 로고</h1>
+        </a></div>
         <nav>
           <ul class="gnb">
             <li class="gnbmain" data-hover="갤러리 소개">
-              <a href="#"><span>ABOUT</span></a>
+              <a href="about.html"><span>ABOUT</span></a>
               <div class="gnbInner">
                 <ul class="gnbsub">
                   <li data-hover="갤러리 소개">
-                    <a href="#"
+                    <a href="about.html"
                       ><span>GREETING</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
                     /></a>
                   </li>
                   <li data-hover="갤러리 위치">
-                    <a href="#"
+                    <a href="location.html"
                       ><span>LOCATION</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
                     /></a>
@@ -44,23 +46,23 @@
               </div>
             </li>
             <li class="gnbmain" data-hover="진행전시">
-              <a href="#"><span>EXHIBITION</span></a>
+              <a href="baxsang_exhibition"><span>EXHIBITION</span></a>
             </li>
             <li class="gnbmain" data-hover="보유그림">
-              <a href="#"><span>COLLECTION</span></a>
+              <a href="baxsang_collection.html"><span>COLLECTION</span></a>
             </li>
             <li class="gnbmain" data-hover="정보">
               <a href="#"><span>MAGAZINE</span></a>
               <div class="gnbInner">
                 <ul class="gnbsub">
                   <li data-hover="깊이보기">
-                    <a href="#"
+                    <a href="baxsang_insight.html"
                       ><span>INSIGHT</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
                     /></a>
                   </li>
                   <li data-hover="아티스트">
-                    <a href="#"
+                    <a href="baxsang_artist.html"
                       ><span>ARTIST</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
                     /></a>
@@ -69,17 +71,17 @@
               </div>
             </li>
             <li class="gnbmain" data-hover="알림">
-              <a href="#"><span>INFO</span></a>
+              <a href="baxsang_notice.html"><span>INFO</span></a>
               <div class="gnbInner">
                 <ul class="gnbsub">
                   <li data-hover="소식">
-                    <a href="#"
+                    <a href="baxsang_notice.html"
                       ><span>NOTICE</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
                     /></a>
                   </li>
                   <li data-hover="고객문의">
-                    <a href="#"
+                    <a href="baxsang_contect.html"
                       ><span>CONTECT</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
                     /></a>
@@ -103,35 +105,35 @@
         <div class="menulist">
           <ul>
             <li class="menu on">
-              <a href="#">
+              <a href="baxsang_about.html">
                 <small class="num">01</small>
                 <p class="menuTitle" data-hover="갤러리 소개">ABOUT</p>
                 <div class="menuPic01"></div>
               </a>
             </li>
             <li class="menu">
-              <a href="#">
+              <a href="baxsang_exhibition.html">
                 <small class="num">02</small>
                 <p class="menuTitle" data-hover="진행전시">EXHIBITION</p>
                 <div class="menuPic02"></div>
               </a>
             </li>
             <li class="menu">
-              <a href="#">
+              <a href="baxsang_collection.html">
                 <small class="num">03</small>
                 <p class="menuTitle" data-hover="보유그림">COLLECTION</p>
                 <div class="menuPic03"></div>
               </a>
             </li>
             <li class="menu">
-              <a href="#">
+              <a href="baxsang_magazine.html">
                 <small class="num">04</small>
                 <p class="menuTitle" data-hover="정보">MAGAZINE</p>
                 <div class="menuPic04"></div>
               </a>
             </li>
             <li class="menu">
-              <a href="#">
+              <a href="baxsang_notice.html">
                 <small class="num">05</small>
                 <p class="menuTitle" data-hover="알림">INFO</p>
                 <div class="menuPic05"></div>
@@ -141,22 +143,22 @@
         </div>
         <div class="menusub">
           <div class="sub01">
-            <a href="#" data-hover="소식">NOTICE</a>
-            <a href="#" data-hover="고객문의">CONTECT</a>
+            <a href="baxsang_notice.html" data-hover="소식">NOTICE</a>
+            <a href="baxsang_contect.html" data-hover="고객문의">CONTECT</a>
           </div>
           <div class="sub02" data-hover="진행전시">
             <a href="#">EXHIBITION</a>
           </div>
           <div class="sub03" data-hover="보유그림">
-            <a href="#">COLLECTION</a>
+            <a href="baxsang_collection.html">COLLECTION</a>
           </div>
           <div class="sub04">
-            <a href="#" data-hover="깊이보기">INSIGHT</a>
-            <a href="#" data-hover="아티스트">ARTIST</a>
+            <a href="baxsang_insight.html" data-hover="깊이보기">INSIGHT</a>
+            <a href="baxsang_artist.html" data-hover="아티스트">ARTIST</a>
           </div>
           <div class="sub05">
-            <a href="">GREETING</a>
-            <a href="">LOCATION</a>
+            <a href="baxsang_about.html">GREETING</a>
+            <a href="baxsang_location.html">LOCATION</a>
           </div>
         </div>
 
@@ -287,22 +289,28 @@
             </div>
 
             <div class="retouch">
-              <p>*텍스투라 리터치 작업 후 사진입니다.</p>
-              <ul>
-                <li><figure><img src="img/about/imgi_18_point-img-before.jpg" alt="before"></figure>
-                </li>
-                <li><img src="img/about/imgi_17_point-img-after.jpg" alt="after"></li>
-              </ul>
-              <div class="retochTextWrap">
                 <p>*텍스투라 리터치 작업 후 사진입니다.</p>
-                <div class="difText">
-                  <div class="number">
-                    <h3>03</h3>
+              <div class="innerBox">
+                <div class="img_container">
+                  <span class="textbefore">before</span>
+                <span class="textafter">after</span>
+                  <img src="img/about/imgi_17_point-img-after.jpg" alt="img_before" class="imgBefore">
+                  <img src="img/about/imgi_18_point-img-before.jpg" alt="img_after" class="imgAfter">
+                  <div class="imgSlider">
+                    <button class="sliderHandle"></button>
                   </div>
-                  <div class="textDesc">
-                    <h3>Textura Retouching</h3>
-                    <h4>텍스투라 리터치</h4>
-                    <p>20년 이상의 경력을 가진 장인의 리터칭 작업을 통해 <br> 원화가 가진 컬러와 붓의 질감을 살려 가장 진품에 가까운 명화를 구현합니다.</p>
+                </div>
+                <div class="retochTextWrap">
+                  <p>*텍스투라 리터치 작업 후 사진입니다.</p>
+                  <div class="difText">
+                    <div class="number">
+                      <h3>03</h3>
+                    </div>
+                    <div class="textDesc">
+                      <h3>Textura Retouching</h3>
+                      <h4>텍스투라 리터치</h4>
+                      <p>20년 이상의 경력을 가진 장인의 리터칭 작업을 통해 <br> 원화가 가진 컬러와 붓의 질감을 살려 가장 진품에 가까운 명화를 구현합니다.</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -317,23 +325,42 @@
           <div class="deco1">
             <p>ART <br> DESIGN</p>
           </div>
-          <div class="greet1">
-            <figure><img src="img/about/imgi_19_greeting-sec01-img01.png" alt="">
-            </figure>
-            <div class="greetText">
-              <p><strong>갤러리 백상</strong>은 예술의 경계를 
-              <br>넘나드는 <strong>창조의 공간</strong>입니다.
-            </p>
-            <p>
-						레플리카 제작, 렌탈, 전시기획을 통해 <br>
-						예술의 아름다움을 더 많은 사람들과 나누고자 합니다.</p>
-            <figure><img src="img/about/imgi_20_greeting-sec01-img02.png" alt="">
-            </figure>
+          <div class="greetWrap">
+            <div class="greet1">
+              <figure><img src="img/about/imgi_19_greeting-sec01-img01.png" alt="">
+              </figure>
+              <div class="greetText">
+                <p><strong>갤러리 백상</strong>은 예술의 경계를
+                <br>넘나드는 <strong>창조의 공간</strong>입니다.
+              </p>
+              <p>레플리카 제작, 렌탈, 전시기획을 통해 <br>예술의 아름다움을 더 많은 사람들과 나누고자 합니다.</p>
             </div>
+            
           </div>
-          <div class="deco1">
-            <p>ART <br> DESIGN</p>
+          <div class="greet2">
+              <div class="greetText">
+                <p>우리의 작품들은 단순한 복제가 아닌, <br>
+                <strong>원작의 감동과 혼을 담아</strong>내어 <strong>새로운 생명</strong>을 불어 넣습니다.</p>
+              </div>
+              <figure><img src="img/about/imgi_20_greeting-sec01-img02.png" alt="">
+              </figure>
+            </div>
+            <div class="greet3">
+              <div class="greetText">
+                <p>전시 기획을 통해 예술가와 <br>관람객이  
+                <strong>소통할 수 있는 장</strong>을 마련하고,</p>
+                <p>렌탈 서비스를 통해 일상 속에서도 <br> 예술을 가까이 느낄 수 있도록 도와드립니다.</p>
+                <p>예술의 향기가 가득한 이곳에서, <br>
+                <strong>당신의 감성을 자극하는 특별한 경험</strong>을 만나보세요.</p>
+               
+              </div>
+               <figure><img src="img/about/imgi_21_greeting-sec02-img01.png" alt="">
+              </figure>
+              <div class="deco2">
+            <p>BAXSANG</p>
           </div>
+            </div>
+          
         </div>
       </section>
       <div class="deco3">ARTIST IS ONE PLACE</div>

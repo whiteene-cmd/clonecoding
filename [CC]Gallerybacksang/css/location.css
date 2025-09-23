@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+small {
+  font-size: 36px;
+}
+h2.fill{
+  font-size: 100px;
+  margin-bottom: 50px;
+    color: rgba(33, 30, 31,0);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+    background-image: linear-gradient(to left,rgba(33, 30, 31,0) 70%, rgba(33, 30, 31,1) 20%);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: textFill .6s ease-in-out 0.8s forwards; 
+    will-change: background-size;
+}
+@keyframes textFill {
+  to { background-size: 100% 100%; }
+}
+
+h3 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+main {
+  padding: 100px 300px;
+}
+
+.map {
+  width: 100%;
+}
+.map iframe {
+  width: 100%;
+  height: 70vh;
+  border: none;
+  margin-bottom: 50px;
+}
+.textBox {
+  letter-spacing: -1px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 30px;
+}
+
+/* 텍스트 색깔, 간격조정 */
+.textBox .callbox ul li,
+.maybeBus ul li,
+.maybeSubway ul li {
+  margin-left: 15px;
+}
+.textBox .callbox ul li > p,
+.maybeBus ul li > p,
+.maybeSubway ul li > p {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2;
+  margin-bottom: 10px;
+}
+.textBox .callbox .callNumber,
+.textBox .callbox .callAddress,
+.maybeSubway div p {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+.bus > div > p {
+  color: #666;
+  font-size: 18px;
+  line-height: 1.5;
+}
+/* 마크, 도형, 딩벳, 버튼 */
+.callNumber span {
+  margin-right: 30px;
+}
+mark {
+  display: inline-block;
+  padding: 6px 8px;
+  background-color: #211e1f;
+  color: #fff;
+  letter-spacing: 0;
+  margin: 5px 8px 0 0;
+}
+
+.bus017a,
+.bus072 {
+  margin-left: 15px;
+}
+.bus017a {
+  margin-bottom: 18px;
+}
+.bus072 {
+  margin-bottom: 30px;
+}
+.bus017a strong,
+.bus072 strong {
+  position: relative;
+  color: #211e1f;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.bus017a strong::before,
+.bus072 strong::before {
+  position: absolute;
+  content: "";
+  top: 70%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  z-index: -1;
+}
+
+.btnbox {
+  padding-left: 15px;
+  display: flex;
+  gap: 30px;
+}
+.btnbox a {
+  cursor: pointer;
+}
+.btnbox button {
+  font-size: 16px;
+  padding: 12px 20px;
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+.btnbox button a {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+.scrollUp {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  z-index: 9999;
+}
+.scrollUp>i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #333;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.scrollUp p {
+  padding: 12.5px 15px;
+  color: #fff;
+  font-size: 18px;
+  border: 2px solid #333;
+  background-color: #333;
+  display: inline-block;      
+  transform: rotate(-90deg);  /* 반시계 방향 90° */
+  margin-bottom: 50px;
+}
+.scrollUp p i{
+    padding-left: 10px;
+}
+.scrollUp:hover>i {
+  color: #fff;
+  background-color: #333;
+}

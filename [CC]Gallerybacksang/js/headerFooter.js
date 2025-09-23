@@ -36,7 +36,7 @@
   wireHoverText('header nav .gnb .gnbInner .gnbsub > li');
 })();  } */
 
-document.addEventListener('DOMContentLoaded', () => {
+/*  document.addEventListener('DOMContentLoaded', () => {
   // GNB 안의 모든 li 대상 (메인/서브 모두 커버)
   const items = document.querySelectorAll('header nav .gnb li');
 
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const open = () => {
       if (sub) sub.style.display = 'block';   // 서브 열기
-      if (span) span.style.fontSize = '18px'; // 텍스트 18px
+      if (span) span.style.fontSize = '24px'; // 텍스트 18px
     };
 
     const close = () => {
@@ -78,9 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+ 
 
-
-
+ */
 /* 헤더 메뉴열기 */
 (() => {
   const menuArea = document.querySelector('.menuArea');

@@ -110,3 +110,55 @@ window.addEventListener("DOMContentLoaded", () => {
     )
   );
 });
+
+/* retouch */
+window.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.imgSlider');
+  const imgAfter = document.querySelector('.imgAfter');
+  const imgContainer = document.querySelector('.img_container');
+  if (!slider || !imgAfter || !imgContainer) return;
+
+  let isDragging = false;
+  const DEG = 120;                   // 원하는 기울기 (↗)
+  const RAD = DEG * Math.PI / 180;
+  const m = Math.tan(RAD);          // 직선의 기울기
+
+  const onDown = (e) => { isDragging = true; update(getPoint(e)); };
+  const onMove = (e) => { if (isDragging) update(getPoint(e)); };
+  const onUp   = () => { isDragging = false; };
+
+  // 마우스 + 터치
+  slider.addEventListener('mousedown', onDown);
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('mouseup', onUp);
+  slider.addEventListener('touchstart', (e)=>{ isDragging = true; update(getPoint(e.touches[0])); }, {passive:true});
+  document.addEventListener('touchmove',  (e)=>{ if(isDragging) update(getPoint(e.touches[0])); }, {passive:true});
+  document.addEventListener('touchend',   onUp);
+
+  // 초기 위치 (가운데)
+  update({ x: imgContainer.getBoundingClientRect().width * 0.5 });
+
+  function getPoint(e){
+    const rect = imgContainer.getBoundingClientRect();
+    return { x: Math.min(Math.max(e.clientX - rect.left, 0), rect.width) };
+  }
+
+  function update({ x }){
+    const rect = imgContainer.getBoundingClientRect();
+    const W = rect.width, H = rect.height;
+    const y0 = H / 2;               // 선이 관통하는 기준 y (중앙)
+    // 상단/하단과의 교점 (px)
+    const xTop    = x - (y0 / m);
+    const xBottom = x + (y0 / m);
+
+    // 대각선의 '왼쪽' 영역을 보여주도록 after를 자름 (↗ 기준)
+    // polygon: (좌상) -> (교점-상단) -> (교점-하단) -> (좌하)
+    imgAfter.style.clipPath =
+      `polygon(0px 0px, ${xTop}px 0px, ${xBottom}px ${H}px, 0px ${H}px)`;
+
+    // 슬라이더 시각 위치(센터를 x, H/2에 맞춤)
+    slider.style.left = `${(x / W) * 100}%`;
+  }
+});
+
+

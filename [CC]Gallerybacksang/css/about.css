@@ -1,82 +1,87 @@
-:root{
-    --font-main:'Bebas Neue';
-    --main: ##211e1f;
-    --text-smill: #666;
-    --color: #fff
+:root {
+  --font-main: "Bebas Neue";
+  --main: ##211e1f;
+  --text-smill: #666;
+  --color: #fff;
 }
-body{
-    padding: 0 15px;
-    font-family: var(--font-main);
-    font-weight: 400;
+body {
+  padding: 0 15px;
+  font-family: var(--font-main);
+  font-weight: 400;
 }
 
-#wrap {overflow: hidden;}
-article{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 65vh;
-    background: url(../img/about/imgi_7_greeting-topbnr-bg.png) no-repeat center/120%;
-    margin-bottom: 130px;
+#wrap {
+  overflow: hidden;
 }
-article .title{
-    text-align: center;
-    color: var(--color);
+article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 65vh;
+  background: url(../img/about/imgi_7_greeting-topbnr-bg.png) no-repeat
+    center/120%;
+  margin-bottom: 130px;
 }
-article .title h2{
-    font-size: 28px; margin-bottom: 15px;
+article .title {
+  text-align: center;
+  color: var(--color);
 }
-article .title h3{
-    font-size: 80px;
-    letter-spacing: -4px;
+article .title h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
 }
-article .title h3 span{
-  display: inline-block; 
+article .title h3 {
+  font-size: 80px;
+  letter-spacing: -4px;
+}
+article .title h3 span {
+  display: inline-block;
   transform-origin: 50% 0%; /* 왼쪽을 축으로 커지게 */
 }
-.scroll-down{
-  position:absolute;
-  bottom: -50px; left:50%;
+.scroll-down {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
   opacity: 0;
-  transform:translateX(-50%);
-  color:#fff;
-  display:flex;
-  flex-wrap:wrap;
-  text-align:center;
-  font-size:0;
+  transform: translateX(-50%);
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 0;
 }
 
 .scroll-down .txt-wrap,
-.scroll-down .line-wrap{
-  position:relative;
+.scroll-down .line-wrap {
+  position: relative;
 }
 .scroll-down .txt-wrap span,
-.scroll-down .line-wrap span{
-  display:inline-block;
+.scroll-down .line-wrap span {
+  display: inline-block;
 }
 
-.scroll-down .txt-wrap{
-  margin-bottom:10px;
+.scroll-down .txt-wrap {
+  margin-bottom: 10px;
 }
- .scroll-down .txt-wrap span.floating-txt{
-  font-size:20px;
-  font-weight:400;
+.scroll-down .txt-wrap span.floating-txt {
+  font-size: 20px;
+  font-weight: 400;
   animation: floating 1.5s infinite linear;
 }
 
-.scroll-down .line-wrap{
-  width:100%;
+.scroll-down .line-wrap {
+  width: 100%;
 }
-.scroll-down .line-wrap span.line{
-  width:1px;
-  height:55px;
-  background-color:rgba(255,255,255,.3);
-  position:relative;
+.scroll-down .line-wrap span.line {
+  width: 1px;
+  height: 55px;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: relative;
 }
-.scroll-down .line-wrap span.line::after{
+.scroll-down .line-wrap span.line::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -84,10 +89,10 @@ article .title h3 span{
   height: 0%;
   animation: progress 2.5s infinite linear;
   background-color: #fff;
-  content: ''
+  content: "";
 }
 
-@keyframes progress{
+@keyframes progress {
   0% {
     height: 0%;
   }
@@ -96,151 +101,155 @@ article .title h3 span{
   }
 }
 
-.empty{
-  position:relative;
-  width:100%; 
-  height:100vh; 
-  background:gray;
+.empty {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: gray;
 }
-.empty span{
-  position:absolute;
-  top:50%; 
-  left:50%;
-  transform:translate(-50%,-50%);
-  font-size:25px;
-  font-weight:600;
-  color:#ffffff;
+.empty span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+  font-weight: 600;
+  color: #ffffff;
 }
-
 
 /* 공통 */
-.innerBox h2{
+.innerBox h2 {
   font-size: 65px;
   text-align: center;
   margin-bottom: 100px;
-
 }
 .innerBox h3 {
   font-family: var(--font-main);
   font-size: 32px;
 }
-.innerBox p:nth-child(2){
+.innerBox p:nth-child(2) {
   font-size: 24px;
   margin-bottom: 20px;
 }
-.innerBox .desc{
+.innerBox .desc {
   font-size: 18px;
   color: var(--text-smill);
 }
 
 /* mainService */
-#mainService{
+#mainService {
   margin: 0 50px;
 }
-.serItem{
+.serItem {
   width: 100%;
   margin-bottom: 130px;
 }
-.serItem ul{
+.serItem ul {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 50px;
 }
-.serItem ul li{
+.serItem ul li {
   width: 80%;
-  justify-self: center; 
+  justify-self: center;
   margin-bottom: 30px;
 }
-.serItem ul li figure{
+.serItem ul li figure {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
-.serItem ul li figure img{
+.serItem ul li figure img {
   display: block;
-  opacity: 0;                  
-  transform-origin: 50% 50%;    
+  opacity: 0;
+  transform-origin: 50% 50%;
   will-change: transform, opacity;
   max-width: 100%;
   height: auto;
   margin-bottom: 30px;
 }
-.serItem ul li figure span{
+.serItem ul li figure span {
   position: absolute;
-  bottom: 11%; right: 2.5%;
+  bottom: 11%;
+  right: 2.5%;
   color: var(--color);
   font-size: 50px;
 }
 
 /* diffrent point */
-#diffrent{
+#diffrent {
   margin-bottom: 130px;
 }
-#diffrent .innerBox .background{
+#diffrent .innerBox .background {
   width: 90%;
-  background-color:#f3f3f3;
+  background-color: #f3f3f3;
 }
-#diffrent .innerBox h2{
+#diffrent .innerBox h2 {
   margin-bottom: 200px;
 }
 
-.point1, .point2{
+.point1,
+.point2 {
   display: flex;
   margin-bottom: 100px;
 }
-.point1 img{
+.point1 img {
   margin: -120px 0 0 150px;
 }
-.point1 figure, .point2 figure{
+.point1 figure,
+.point2 figure {
   overflow: hidden;
 }
-.point1 {position: relative;}
-.point1 .difText{
-  position: absolute;
-  bottom: 0; right: 25%;
+.point1 {
+  position: relative;
 }
-.difText{
+.point1 .difText {
+  position: absolute;
+  bottom: 0;
+  right: 25%;
+}
+.difText {
   display: flex;
 }
-.difText .number{
+.difText .number {
   display: flex;
   width: 80px;
   height: 100%;
 }
-.difText h4{
+.difText h4 {
   font-size: 50px;
   margin-bottom: 30px;
 }
-.difText p{
+.difText p {
   font-size: 18px;
   line-height: 1.6;
   color: #3f3f3f;
 }
 
-.point2{
+.point2 {
   justify-content: flex-end;
   align-items: flex-end;
   gap: 80px;
 }
-.point2 .difText{
+.point2 .difText {
   text-align: right;
 }
-.point2 .number{
+.point2 .number {
   position: relative;
   left: 37.5%;
   height: fit-content;
 }
 
-.retouch> p{
+.retouch > p {
   color: var(--text-smill);
   margin: -50px -100px 0 0;
   line-height: 1.6;
 }
-.retouch .retochTextWrap> p{
+.retouch .retochTextWrap > p {
   color: var(--text-smill);
-  margin: -50px -100px 50px  0;
+  margin: -50px -100px 50px 0;
 }
-.retochTextWrap{
+.retochTextWrap {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -248,12 +257,178 @@ article .title h3 span{
   margin: 50px 100px 0 0;
   padding-bottom: 50px;
 }
-.retouch ul li{
+
+/* 리터치영역 */
+.img_container {
   position: relative;
-  left: -40px;
-  max-width: 100vw;
+  overflow: hidden;
 }
-.retouch img{
-  max-width: 100vw;
+.textbefore,.textafter{
+  text-transform: uppercase;
+  position: absolute;
+  font-size: 60px;
+  z-index: 500;
+}
+.textbefore{
+  top: 25px; left: 50px;
+}
+.textafter{
+  bottom: 25px; right: 50px;
+}
+.imgBefore,
+.imgAfter {
+  width: 100%;
+  display: block;
 }
 
+.imgAfter {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  clip-path: inset(0 50% 0 0);
+}
+
+.imgSlider {
+  position: absolute;
+  /* cursor: ew-resize; */
+  left: 50%;
+  top: 50%;
+  width: 1px; /* 잡기 쉬운 히트영역 */
+  height: 140%;
+  background-color: rgba(255, 255, 255,0);
+  transform: translate(-50%, -50%) rotate(30deg);
+  transform-origin: center;
+cursor: grab;
+  touch-action: none;   /* 터치 드래그 안정화 */
+  z-index: 3;
+}
+
+
+/* 가운데 버튼 */
+.sliderHandle{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 124px;
+  height: 44px;
+  transform: translate(-50%, -50%) rotate(150deg); /* 부모 회전 보정 */
+  border-radius: 999px;
+  border: 2px solid #000000;
+  background: rgba(0,0,0);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font: 600 16px/1.2 system-ui, sans-serif;
+  pointer-events: none; /* 클릭/드래그는 부모가 받도록 */
+}
+
+/* 핸들 안쪽 아이콘(양쪽 화살표 느낌) */
+.sliderHandle::after{
+  content: "< DRAG >";
+  transform: rotate(180deg); /* 시각 밸런스용, 생략해도 됨 */
+  display: inline-block;
+}
+
+/* 드래그 커서 */
+.imgSlider:active{ cursor: grabbing; }
+
+
+
+/* greetion영역 */
+#greetion .innerBox {
+  position: relative;
+}
+.greet1{
+  padding: 0 50px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+}
+.greet1 img{
+  max-width: 100%;
+}
+.greetText{
+  padding: 150px;
+  font-size: 18px;
+  line-height: 1.8;
+  box-sizing: border-box;
+}
+.greetText p:first-child{
+  margin-bottom: 20px;
+}
+.greetText p:nth-child(2), .greetText p:last-child{
+  font-size: 18px;
+}
+.greet2{
+  padding: 0 50px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
+}
+.greet2 img{
+  max-width: 98%;
+  margin-top: -200px;
+}
+.greet2 .greetText{
+  margin-top: 50px;
+}
+.greet3{
+  position: relative;
+  margin-top: 150px;
+  padding: 0 50px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: 50px;
+}
+.greet3 img{
+  max-width: 90%;
+}
+
+.deco1 {
+  position: absolute;
+  top: -35px;
+  right: 0;
+  color: #fff;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  opacity: 0.2;
+  font-size: 160px;
+  text-align: end;
+  letter-spacing: 15px;
+  line-height: 1;
+}
+
+.deco2{
+  position: absolute;
+  left: 0; top: -150px;
+  color: #fff;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  opacity: 0.2;
+  font-size: 200px;
+  text-align: end;
+  letter-spacing: 15px;
+  line-height: 1;
+}
+.deco3{
+  position: relative;
+  left: 0;
+  display: inline-block;
+  padding: 50px;
+  color: #fff;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  opacity: 0.2;
+  font-size: 150px;
+  text-align: end;
+  letter-spacing: 15px;
+  line-height: 1;
+}
