@@ -27,7 +27,9 @@ h2.fill {
     background-size: 100% 100%;
   }
 }
-
+#wrap{
+  overflow: hidden;
+}
 section,
 article {
   margin: 100px 200px;
@@ -37,10 +39,12 @@ h3 {
   position: relative;
   font-size: 24px;
   margin-bottom: 50px;
+  z-index: 1;
 }
 h3 span {
   font-size: 38px;
   padding-right: 15px;
+  background-color: #fff;
 }
 h3::after {
   position: absolute;
@@ -49,18 +53,17 @@ h3::after {
   transform: translateY(-50%);
   content: "";
   display: block;
-  width: 85%;
+  width: 86%;
   height: 2px;
   background-color: #000;
+  z-index: -10;
 }
+#upcoming h3::after{width: 82%;}
+#past h3::after{width: 86.5%;}
+#postiong h3::after{width: 80.3%;}
+
 img {
   max-width: 100%;
-}
-#upcoming h3::after {
-  width: 82%;
-}
-#postiong h3::after {
-  width: 80%;
 }
 /* onview */
 

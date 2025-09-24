@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/backsang.css" />
     <link rel="stylesheet" href="css/headerFooter.css">
 
+    <script src="js/baxsangMain.js" defer></script>
     <script src="js/headerFooter.js" defer></script>
     <!-- Link Swiper's CSS -->
     <link
@@ -29,17 +30,17 @@
         <nav>
           <ul class="gnb">
             <li class="gnbmain" data-hover="갤러리 소개">
-              <a href="about.html"><span>ABOUT</span></a>
+              <a href="baxsang_about.html"><span>ABOUT</span></a>
               <div class="gnbInner">
                 <ul class="gnbsub">
                   <li data-hover="갤러리 소개">
-                    <a href="about.html"
+                    <a href="baxsang_about.html"
                       ><span>GREETING</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
                     /></a>
                   </li>
                   <li data-hover="갤러리 위치">
-                    <a href="location.html"
+                    <a href="baxsang_location.html"
                       ><span>LOCATION</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
                     /></a>
@@ -48,7 +49,7 @@
               </div>
             </li>
             <li class="gnbmain" data-hover="진행전시">
-              <a href="baxsang_exhibition"><span>EXHIBITION</span></a>
+              <a href="baxsang_exhibition.html"><span>EXHIBITION</span></a>
             </li>
             <li class="gnbmain" data-hover="보유그림">
               <a href="baxsang_collection.html"><span>COLLECTION</span></a>
@@ -212,23 +213,23 @@
           <h3>INSIGHT</h3>
         </div>
         <div class="innerBox">
-          <div class="pageNum">
+          <!-- <div class="pageNum">
             <span class="changeNum">01</span>
             /<span class="fixNum">04</span>
-          </div>
+          </div> -->
           <div class="istwrap">
             <div class="ist ist1">
-              <img src="img/imgi_15_d7daf56c_11.jpg" alt="갤러리오픈" />
+              <img src="img/imgi_15_d7daf56c_11.jpg" alt="갤러리오픈" class="revealClip"/>
               <div class="istTxt">
                 <span>김진부[기자]</span>
                 <p>
-                  고양시 민간 미술관 \'갤러리백상\', 클림트-고흐 레플리카 특별전
+                  고양시 민간 미술관 '갤러리백상', 클림트-고흐 레플리카 특별전
                   오픈 <strong>(2025.07.17)</strong>
                 </p>
               </div>
             </div>
             <div class="ist ist2">
-              <img src="img/imgi_16_333d5303_1.jpg" alt="인상주의기반" />
+              <img src="img/imgi_16_333d5303_1.jpg" alt="인상주의기반" class="revealClip"/>
               <div class="istTxt">
                 <span>이한빛[칼럼니스트]</span>
                 <p>
@@ -240,7 +241,7 @@
             <div class="ist ist3">
               <img
                 src="img/imgi_13_68bbac65_104263_87521_115.jpg"
-                alt="갤러리공개개관"
+                alt="갤러리공개개관" class="revealClip"
               />
               <div class="istTxt">
                 <span>김진부[기자]</span>
@@ -251,12 +252,12 @@
               </div>
             </div>
             <div class="ist ist4">
-              <img src="img/imgi_14_a5c0fafa_1.jpg" alt="150주년기념" />
+              <img src="img/imgi_14_a5c0fafa_1.jpg" alt="150주년기념" class="revealClip"/>
               <div class="istTxt">
                 <span>김진부[기자]</span>
                 <p>
-                  고양시 동네 미술관 \'갤러리백상\', 킨텍스 2전시장서 열리는
-                  \'고양국제아트페어\' 참여 <strong>(2024.10.11)</strong>
+                  고양시 동네 미술관 '갤러리백상', 킨텍스 2전시장서 열리는
+                  '고양국제아트페어' 참여 <strong>(2024.10.11)</strong>
                 </p>
               </div>
             </div>
@@ -268,7 +269,7 @@
         </div>
       </section>
       <section id="aboutArea">
-        <img src="img/imgi_16_about-img01.png" alt="" />
+        <figure><img src="img/imgi_16_about-img01.png" alt="" /></figure>
         <span class="bdDeco1">BAXSANG</span>
         <div class="innerBox">
           <div class="infoWrap">
@@ -424,12 +425,20 @@
         </div>
       </div>
     </footer>
+    <aside class="scrollUp">
+      <p>문의하기<i class="fa-solid fa-comment-dots"></i></p>
+      <i class="fa-solid fa-arrow-up"></i>
+    </aside>
 
+    <!-- gsap -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
+
       var swiper = new Swiper(".mainSwiper", {
         autoplay: {
           delay: 2500,

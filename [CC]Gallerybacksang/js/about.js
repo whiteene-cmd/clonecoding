@@ -85,7 +85,7 @@ window.addEventListener("DOMContentLoaded", () => {
         scrollTrigger: {
           trigger: img,
           start: "top 85%",
-          toggleActions: "restart reverse restart reverse",
+          toggleActions: "restart reverse restart reverse"
         },
       }
     )
@@ -104,7 +104,7 @@ window.addEventListener("DOMContentLoaded", () => {
         scrollTrigger: {
           trigger: img,
           start: "top 85%",
-          toggleActions: "restart reverse restart reverse",
+          toggleActions: "restart reverse restart reverse"
         },
       }
     )

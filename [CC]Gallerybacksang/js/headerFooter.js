@@ -26,10 +26,6 @@
       li.addEventListener('focusout', hide);
     });
 
- '
-
-
-
   // 1) 상단 GNB 메인
   wireHoverText('header nav .gnb .gnbmain');
   // 2) 드롭다운 서브
@@ -77,10 +73,27 @@
     li.addEventListener('focusout', close);
   });
 });
-
- 
-
  */
+
+/* btn .more */
+
+  gsap.utils.toArray(".more").forEach((el) => {
+  gsap.fromTo(el,
+    { y: 65, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1.2,
+      ease: "expo.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 80%",
+        toggleActions: "play reverse restart reverse"
+      }
+    })
+  })
+
+
 /* 헤더 메뉴열기 */
 (() => {
   const menuArea = document.querySelector('.menuArea');
@@ -176,3 +189,13 @@ document.querySelector('.angle')
     ?.addEventListener('click', () =>
       document.querySelector('.shop')?.classList.toggle('on')
     );
+
+    /* 스크롤업 */
+    window.addEventListener("DOMContentLoaded",()=>{
+      const toTop = document.querySelector('.scrollUp');
+      if(!toTop)return
+
+      toTop.addEventListener("click",()=>{
+        window.scrollTo({top: 0, behavior:"smooth"});
+      });
+    });

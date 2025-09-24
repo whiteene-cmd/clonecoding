@@ -37,7 +37,11 @@ section .secTitle span {
 
 
 /* 메인비주얼 영역 */
+#mainVisual{
+  margin-bottom: 130px;
+}
 .mainSwiper {
+  position: relative;
   width: 100%;
   height: 767px;
 }
@@ -53,10 +57,9 @@ section .secTitle span {
 .visual3 {
   background: url(../img/imgi_10_20240502_133347_809.jpg) no-repeat center/cover;
 }
-.mainSwiper {
-  position: relative;
-}
+
 .mainSwiper .textBox {
+  opacity: 1;
   position: absolute;
   bottom: 10%;
   left: 5%;
@@ -76,7 +79,7 @@ section .secTitle span {
 
 /* insight영역 */
 #insightArea {
-    width: 100%;
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -85,7 +88,7 @@ section .secTitle span {
   display: flex;
   gap: 50px;
 }
-#insightArea .innerBox .pageNum {
+/* #insightArea .innerBox .pageNum {
   display: flex;
   padding: 30px;
   align-items: center;
@@ -102,22 +105,26 @@ section .secTitle span {
   font-family: "Bebas Neue", sans-serif;
   color: #c9ab81;
   font-size: 20px;
-}
+} */
 .istwrap {
     width: 100%;
-  display: flex;
-  margin-bottom: 100px;
+    padding: 0 200px;
+    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  margin-bottom: 50px;
 }
 .ist {
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
+  display: inline-block;
 }
 
-.ist img {
-  width: 100%;
-  height: 100%;
+.ist .revealClip {  
+  display: block;
+  clip-path: inset(0 100% 0 0);
+  max-width: 100%;
   margin-bottom: 30px;
 }
 .ist .istTxt span {
@@ -141,11 +148,21 @@ section .secTitle span {
   position: relative;
   height: 800px;
 }
-#aboutArea > img {
+#aboutArea > figure{
+  /* width: 800px;
+  height: 600px; */
+  width: 46%;
+  height: 80%;
+  overflow: hidden;
+  position: relative;
+  z-index:2;
+}
+#aboutArea > figure img {
   position: absolute;
   top: 0;
   left: 0;
-  z-index:1;
+  width: 100%;
+  height: 100%;
 }
 #aboutArea .innerBox {
   position: absolute;
@@ -168,7 +185,7 @@ section .secTitle span {
   top: 15%;
   right: 25%;
   padding: 20px;
-  z-index: 2;
+  z-index: 1;
 }
 #aboutArea .innerBox .infoWrap > p {
   line-height: 1.6;

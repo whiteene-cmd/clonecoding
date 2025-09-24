@@ -7,14 +7,12 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/headerFooter.css">
     <link rel="stylesheet" href="css/location.css">
-
+    
+    <script src="js/location.js" defer></script>
     <script src="js/headerFooter.js" defer></script>
-    <!-- gsap -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    
     <!-- 폰트어썸 -->
     <script src="https://kit.fontawesome.com/3da96badf7.js" crossorigin="anonymous"></script>
-    <script src="js/location.js" defer></script>
     <style>
       h2,h3,small{
         font-family: "Bebas Neue", sans-serif;
@@ -304,5 +302,11 @@
       <p>문의하기<i class="fa-solid fa-comment-dots"></i></p>
       <i class="fa-solid fa-arrow-up"></i>
     </aside>
+    <!-- gsap -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+    </script>
   </body>
 </html>
