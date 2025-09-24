@@ -22,10 +22,128 @@
     ></script>
     <style>
       h2,
-      h3,
+      strong,
       small {
         font-family: "Bebas Neue", sans-serif;
         font-weight: 400;
+      }
+      main{
+        padding: 100px 300px;
+      }
+      small {
+        font-size: 36px;
+      }
+      h2.fill {
+        font-size: 100px;
+        margin-bottom: 50px;
+        color: rgba(33, 30, 31, 0);
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #000;
+        background-image: linear-gradient(
+          to left,
+          rgba(33, 30, 31, 0) 70%,
+          rgba(33, 30, 31, 1) 20%
+        );
+        background-repeat: no-repeat;
+        background-size: 0% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: textFill 0.6s ease-in-out 0.8s forwards;
+        will-change: background-size;
+      }
+      @keyframes textFill {
+        to {
+          background-size: 100% 100%;
+        }
+      }
+      .artfilter{
+        padding: 0 40px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+        min-height: 60px;
+        max-height: 80px;
+      }
+      .artfilter > p span{
+        font-weight: 600;
+      }
+      .artfilter .nameTab{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-items: center;
+        align-items: center;
+      }
+      .artfilter .nameTab span{
+        display: inline-block;
+        position: relative;
+        transition: color 0.3s ease;
+        cursor: pointer;
+      }
+      .artfilter .nameTab span::after{
+        position: absolute;
+        bottom: -10px;
+        content: '';
+        display:block;
+        width: 0;
+        height: 2px;
+        background-color: #211e12;
+        transition: width 0.3s ease-in;
+      }
+
+      .artfilter .nameTab span:hover{
+        color: slateblue;
+
+      }.artfilter .nameTab span:hover::after{
+        width: 100%;
+        background-color: slateblue;
+      }
+      .artbox ul{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 30px;
+      }
+      .artbox ul li{
+        background-color: antiquewhite;
+      }
+      .artbox ul li img{
+        width: 100%;
+        height: 50%;
+      }
+      .artbox ul li .description{
+        padding: 20px 40px;
+      }
+      .artbox ul li .textBox .artistName{
+        font-size: 20px;
+        line-height: 1;
+        color: #c9ab81;
+      }
+      .artbox ul li .textBox .artName{
+        font-size: 24px;
+        padding: 15px 0 30px 0;
+        border-bottom: 1px solid rgba(33, 30, 31, 0.3);
+      }
+
+      .artbox ul li .info p{
+        position: relative;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      .artbox ul li .info p:first-child{
+        padding-top: 30px;
+      }
+      .artbox ul li .info p::after{
+        position: absolute;
+        content: '';
+        top: 50%;
+        right: 0;
+        display: block;
+        width: 1px;
+        height: 12.5px;
+        background-color: rgba(33, 30, 31, 0.3);
       }
     </style>
 </head>
@@ -187,13 +305,32 @@
         <section id="arts">
             <div class="artfilter">
                 <p>총 <span></span>건</p>
-                <div>
+                <div class="nameTab">
                     <span class="artist1">구스타프 카유보트</span>
                     <span class="artist2">구스타프 클림프</span>
                     <span class="artist3">빈센트 반 고흐</span>
                     <span class="artist4">클로드 모네</span>
                 </div>
-            </div>
+              </div>
+              <div class="artbox">
+                <ul>
+                  <li>
+                    <figure><img src="http://bxgallery.kr/bbs/data/art_biz/1322427d_EBB988EC84BCED8AB8+EBB098+EAB3A0ED9D90_18897E1890_EB82AEEC9EA0_EC8DB8.jpg" alt=""></figure>
+                    <div class="description">
+                      <div class="textBox">
+                        <p class="artistName">구스타프 카유보트</p>
+                        <h3 class="artName">별헤는밤</h3>
+                      </div>
+                      <div class="info">
+                        <p><strong>PRODUCTION YEAR</strong><span class="yearNum"></span></p>
+                        <p><strong>SIZE</strong><span class="sizeNum"></span></p>
+                        <p><strong>MATERIAL</strong><span class="metName"></span></p>
+                        <p><strong>PRICE</strong>-</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
         </section>
       </main>
 
