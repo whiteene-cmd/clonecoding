@@ -8,18 +8,21 @@
     <link rel="stylesheet" href="css/backsang.css" />
     <link rel="stylesheet" href="css/headerFooter.css">
 
-    <script src="js/baxsangMain.js" defer></script>
+
+    <!-- gsap -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+
+    <!-- 내가 만든 js -->
+    <script src="js/collection.js" defer></script>
     <script src="js/headerFooter.js" defer></script>
-    <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+
     <!-- 폰트어썸 -->
     <script
       src="https://kit.fontawesome.com/3da96badf7.js"
       crossorigin="anonymous"
     ></script>
+
     <style>
       h2,
       strong,
@@ -58,7 +61,6 @@
         }
       }
       .artfilter{
-        padding: 0 40px;
         box-sizing: border-box;
         display: flex;
         justify-content: space-between;
@@ -66,6 +68,7 @@
         font-size: 18px;
         min-height: 60px;
         max-height: 80px;
+        margin-bottom: 30px;
       }
       .artfilter > p span{
         font-weight: 600;
@@ -73,7 +76,8 @@
       .artfilter .nameTab{
         display: flex;
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 20px;
+        font-weight: 600;
         justify-items: center;
         align-items: center;
       }
@@ -83,6 +87,18 @@
         transition: color 0.3s ease;
         cursor: pointer;
       }
+      .artfilter .nameTab span::before{
+        position: absolute;
+        content: '';
+        top: 50%;
+        transform: translateY(-50%);
+        right: -12px;
+        display: block;
+        width: 1px;
+        height: 12.5px;
+        background-color: rgba(33, 30, 31, 0.3);
+      }
+      .artfilter .nameTab span:last-child:before{display: none;}
       .artfilter .nameTab span::after{
         position: absolute;
         bottom: -10px;
@@ -107,7 +123,11 @@
         gap: 30px;
       }
       .artbox ul li{
-        background-color: antiquewhite;
+        border: 2px solid rgba(33, 30, 31, 0.3);
+        transition: border 0.3s ease;
+      }
+      .artbox ul li:hover{
+        border: 2px solid rgba(33, 30, 31, 1);
       }
       .artbox ul li img{
         width: 100%;
@@ -128,18 +148,29 @@
       }
 
       .artbox ul li .info p{
-        position: relative;
+        display: flex;
+        gap: 10px;
         font-size: 18px;
         margin-bottom: 20px;
+        justify-content: flex-start;
+        align-items: center;
       }
       .artbox ul li .info p:first-child{
         padding-top: 30px;
       }
-      .artbox ul li .info p::after{
+      .artbox ul li .info p span{
+        position: relative;
+        padding-left: 10px;
+        color: #666;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .artbox ul li .info p span::before{
         position: absolute;
         content: '';
         top: 50%;
-        right: 0;
+        transform: translateY(-50%);
+        left: 0;
         display: block;
         width: 1px;
         height: 12.5px;
@@ -158,17 +189,17 @@
         <nav>
           <ul class="gnb">
             <li class="gnbmain" data-hover="갤러리 소개">
-              <a href="about.html"><span>ABOUT</span></a>
+              <a href="baxsang_about.html"><span>ABOUT</span></a>
               <div class="gnbInner">
                 <ul class="gnbsub">
                   <li data-hover="갤러리 소개">
-                    <a href="about.html"
+                    <a href="baxsang_about.html"
                       ><span>GREETING</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
                     /></a>
                   </li>
                   <li data-hover="갤러리 위치">
-                    <a href="location.html"
+                    <a href="baxsang_location.html"
                       ><span>LOCATION</span
                       ><img src="img/imgi_12_wht-arrow-next.png" alt=""
                     /></a>
@@ -177,13 +208,13 @@
               </div>
             </li>
             <li class="gnbmain" data-hover="진행전시">
-              <a href="baxsang_exhibition"><span>EXHIBITION</span></a>
+              <a href="baxsang_exhibition.html"><span>EXHIBITION</span></a>
             </li>
             <li class="gnbmain" data-hover="보유그림">
               <a href="baxsang_collection.html"><span>COLLECTION</span></a>
             </li>
             <li class="gnbmain" data-hover="정보">
-              <a href="#"><span>MAGAZINE</span></a>
+              <a href="baxsang_insight.html"><span>MAGAZINE</span></a>
               <div class="gnbInner">
                 <ul class="gnbsub">
                   <li data-hover="깊이보기">
@@ -300,13 +331,13 @@
       <main>
         <article>
             <small>ART DESIGN IN BAEXANG</small>
-            <h2 class="fill">EXHIBITION</h2>
+            <h2 class="fill">COLLECTION</h2>
         </article>
         <section id="arts">
             <div class="artfilter">
-                <p>총 <span></span>건</p>
+                <p>총 <span></span>개</p>
                 <div class="nameTab">
-                    <span class="artist1">구스타프 카유보트</span>
+                    <span class="artist1">구스타브 카유보트</span>
                     <span class="artist2">구스타프 클림프</span>
                     <span class="artist3">빈센트 반 고흐</span>
                     <span class="artist4">클로드 모네</span>
@@ -318,14 +349,14 @@
                     <figure><img src="http://bxgallery.kr/bbs/data/art_biz/1322427d_EBB988EC84BCED8AB8+EBB098+EAB3A0ED9D90_18897E1890_EB82AEEC9EA0_EC8DB8.jpg" alt=""></figure>
                     <div class="description">
                       <div class="textBox">
-                        <p class="artistName">구스타프 카유보트</p>
-                        <h3 class="artName">별헤는밤</h3>
+                        <p class="artistName"></p>
+                        <h3 class="artName"></h3>
                       </div>
                       <div class="info">
                         <p><strong>PRODUCTION YEAR</strong><span class="yearNum"></span></p>
                         <p><strong>SIZE</strong><span class="sizeNum"></span></p>
                         <p><strong>MATERIAL</strong><span class="metName"></span></p>
-                        <p><strong>PRICE</strong>-</p>
+                        <p><strong>PRICE</strong><span>-</span></p>
                       </div>
                     </div>
                   </li>
@@ -394,9 +425,7 @@
       <p>문의하기<i class="fa-solid fa-comment-dots"></i></p>
       <i class="fa-solid fa-arrow-up"></i>
     </aside>
-    <!-- gsap -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    
 
     </div>
 </body>

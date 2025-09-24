@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+h2,
+strong,
+small {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+}
+main {
+  padding: 100px 300px;
+}
+small {
+  font-size: 36px;
+}
+h2.fill {
+  font-size: 100px;
+  margin-bottom: 50px;
+  color: rgba(33, 30, 31, 0);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  background-image: linear-gradient(
+    to left,
+    rgba(33, 30, 31, 0) 70%,
+    rgba(33, 30, 31, 1) 20%
+  );
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: textFill 0.6s ease-in-out 0.8s forwards;
+  will-change: background-size;
+}
+@keyframes textFill {
+  to {
+    background-size: 100% 100%;
+  }
+}

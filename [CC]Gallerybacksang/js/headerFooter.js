@@ -1,97 +1,44 @@
-// 항목별 hover 텍스트: li 또는 span의 data-hover를 우선 사용, 없으면 "baexang"
-/* (function () {
-  function wireHoverText(listSelector) {
-    document.querySelectorAll(listSelector).forEach((li) => {
-      const span = li.querySelector(':scope > a > span');
-      if (!span) return;
+/* 버튼 로직 */
+(() => {
+  const run = () => {
+    const gs = window.gsap;
+    if (!gs) return;
 
-      // 원문 저장(1회)
-      if (!span.dataset.original) {
-        span.dataset.original = (span.textContent || '').trim();
-      }
-
-      // li의 data-hover > span의 data-hover > 기본값
-      const hoverText =
-        li.dataset.hover ||
-        span.dataset.hover ||
-        'Baexang' 
-
-      // 마우스/키보드 모두 대응
-      const show = () => (span.textContent = hoverText);
-      const hide = () => (span.textContent = span.dataset.original);
-
-      li.addEventListener('mouseenter', show);
-      li.addEventListener('mouseleave', hide);
-      li.addEventListener('focusin', show);
-      li.addEventListener('focusout', hide);
-    });
-
-  // 1) 상단 GNB 메인
-  wireHoverText('header nav .gnb .gnbmain');
-  // 2) 드롭다운 서브
-  wireHoverText('header nav .gnb .gnbInner .gnbsub > li');
-})();  } */
-
-/*  document.addEventListener('DOMContentLoaded', () => {
-  // GNB 안의 모든 li 대상 (메인/서브 모두 커버)
-  const items = document.querySelectorAll('header nav .gnb li');
-
-  items.forEach(li => {
-    // a > span 텍스트 노드 (없어도 동작)
-    const span = li.querySelector('a span');
-
-    // 서브메뉴 후보를 폭넓게 탐색 (구조가 달라도 최대한 잡기)
-    let sub = li.querySelector('.gnbInner');
-    if (!sub) {
-      // 자식 요소 중 서브메뉴로 보이는 ul/컨테이너 추정
-      sub = Array.from(li.children).find(el =>
-        el.matches('.gnbsub, .submenu, ul, .dropdown')
-      ) || null;
+    if (window.ScrollTrigger && gs.registerPlugin) {
+      gs.registerPlugin(ScrollTrigger);
     }
 
-    // 원래 폰트 크기 기억
-    const originalSize =
-      span ? (span.style.fontSize || getComputedStyle(span).fontSize) : '';
+    // toArray가 혹시 배열이 아닌 값을 내놓아도 안전하게 배열로 강제
+    const nodes = gs.utils && gs.utils.toArray
+      ? gs.utils.toArray(".more")
+      : document.querySelectorAll(".more");
 
-    const open = () => {
-      if (sub) sub.style.display = 'block';   // 서브 열기
-      if (span) span.style.fontSize = '24px'; // 텍스트 18px
-    };
+    const list = Array.from(nodes || []); // 어떤 값이든 배열화
 
-    const close = () => {
-      if (sub) sub.style.display = 'none';           // 서브 닫기
-      if (span && originalSize) span.style.fontSize = originalSize; // 복원
-    };
+    list.forEach((el) => {
+      gs.fromTo(
+        el,
+        { y: 65, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "expo.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            toggleActions: "play reverse restart reverse",
+          },
+        }
+      );
+    });
+  };
 
-    // 초기 상태: 서브메뉴 숨김
-    if (sub) sub.style.display = 'none';
+  // DOM 준비 시도 + 리소스 전부 로드 시도 (둘 다 걸어두면 순서 문제를 피할 수 있음)
+  document.addEventListener("DOMContentLoaded", run);
+  window.addEventListener("load", run);
+})();
 
-    // 마우스 + 키보드 접근성 대응
-    li.addEventListener('mouseenter', open);
-    li.addEventListener('mouseleave', close);
-    li.addEventListener('focusin', open);
-    li.addEventListener('focusout', close);
-  });
-});
- */
-
-/* btn .more */
-
-  gsap.utils.toArray(".more").forEach((el) => {
-  gsap.fromTo(el,
-    { y: 65, opacity: 0 },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1.2,
-      ease: "expo.out",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 80%",
-        toggleActions: "play reverse restart reverse"
-      }
-    })
-  })
 
 
 /* 헤더 메뉴열기 */

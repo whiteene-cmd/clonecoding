@@ -321,7 +321,7 @@ cursor: grab;
   justify-content: center;
   color: #fff;
   font: 600 16px/1.2 system-ui, sans-serif;
-  pointer-events: none; /* 클릭/드래그는 부모가 받도록 */
+  cursor: pointer;
 }
 
 /* 핸들 안쪽 아이콘(양쪽 화살표 느낌) */
