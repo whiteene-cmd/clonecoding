@@ -1,0 +1,77 @@
+{
+    "news":{
+        "news1":[
+            {   "newsCard":"NEWS",
+                "newsImage":"http://bxgallery.kr/bbs/data/insight/cfbffb7b_1.jpg",
+                "reporter":"전지현[기자]",
+                "newsTitle":"'이건희 기증관'대신 '오르세' 같은 근대 미술관을 지어야 하는 이유 [데스크 칼럼]",
+                "date":"(2024.10.11)"
+            }
+        ],
+        "news2":[
+            {   "newsCard":"NEWS",
+                "newsImage":"http://bxgallery.kr/bbs/data/insight/774a8b58_1.jpg",
+                "reporter":"최민[기자]",
+                "newsTitle":" 킨텍스 '코리아 나라장터엑스포' 및 '고양시 중장년일자리박람회' 참가업체 모집",
+                "date":"(2024.10.10)"
+            }
+        ],
+        "news3":[
+            {   "newsCard":"READ",
+                "newsImage":"http://bxgallery.kr/bbs/data/insight/817cd314_1.jpg",
+                "reporter":"편집국장 송문석",
+                "newsTitle":" [송문석 칼럼] 대구의 문화지형을 바꾸고 도시의 소프트파워를 높일 대구간송미술관이 부럽다",
+                "date":"(2024.09.29)"
+            }
+        ],
+        "news4":[
+            {   "newsCard":"READ",
+                "newsImage":"http://bxgallery.kr/bbs/data/insight/52e1b836_1.jpg",
+                "reporter":"이재민",
+                "newsTitle":"시립미술관 부재 속 '갤러리 가는 날' 돋보였다",
+                "date":"(2024.09.24)"
+            }
+        ],
+        "news5":[
+            {   "newsCard":"READ",
+                "newsImage":"http://bxgallery.kr/editor/upload/img/1755501531.jpg",
+                "reporter":"이정민 기자",
+                "newsTitle":"이해하기 어려운 현대미술",
+                "date":"(2024.09.23)"
+            }
+        ],
+        "news6":[
+            {   "newsCard":"READ",
+                "newsImage":"http://bxgallery.kr/bbs/data/insight/dfcb42b8_10.jpg",
+                "reporter":"엄길수 (발행인 대표기자)",
+                "newsTitle":"[발행인 칼럼] ‘지역 축제’와 미술 ",
+                "date":"(2024.08.17)"
+            }
+        ],
+        "news7":[
+            {   "newsCard":"READ",
+                "newsImage":"http://bxgallery.kr/bbs/data/insight/ee069843_3.jpg",
+                "reporter":"엄길수 발행인 대표기자",
+                "newsTitle":"[발행인 칼럼] 지금, ‘미술평론’이대로 괜찮은가 ?",
+                "date":"(2024. 07. 10)"
+            }
+        ],
+        "news8":[
+            {   "newsCard":"READ",
+                "newsImage":"http://bxgallery.kr/bbs/data/insight/6d7dc916_1.jpg",
+                "reporter":"정인서(미술평론가)",
+                "newsTitle":"리움미술관, ‘보이스(VOICE)’에서 소리를 보다 ",
+                "date":"(2024.04.05)"
+            }
+        ],
+        "news9":[
+            {   "newsCard":"READ",
+                "newsImage":"http://bxgallery.kr/bbs/data/insight/61730d8c_1.jpg",
+                "reporter":"이한빛의 미술관 정원",
+                "newsTitle":"'미술관은 예술의 사원",
+                "date":"(2024.03.10)"
+            }
+        ]
+    }
+
+}

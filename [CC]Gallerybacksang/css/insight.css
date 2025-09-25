@@ -36,3 +36,128 @@ h2.fill {
     background-size: 100% 100%;
   }
 }
+
+/* 버튼 배경 색상 바꿈 */
+#shopping .more::before {
+  background: #fff;
+  border: 2px solid #fff;
+}
+
+/* 뉴스영역 */
+#news ul{
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+}
+#news ul li{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+#news ul li:hover{
+  width: 95%;
+}
+#news ul li figure{
+
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+#news ul li .newsCard{
+  position: absolute;
+  top: 0; left: 0;
+  display: block;
+  padding: 8px 18px;
+  background-color: #000;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Bebas Neue", sans-serif;
+  z-index: 1;
+}
+#news ul li figure img{
+  max-width: 100%;
+  min-height: 100%;
+}
+
+#news ul li .textBox .reporter{
+  color: #c9ab81;
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+#news ul li .textBox .newsTitle{
+  font-size: 24px;
+  font-weight: 600;
+}
+#news ul li .textBox strong{
+  color: #000;
+}
+/* shopping */
+#shopping{
+  position: relative;
+  margin-top: 130px;  
+}
+#shopping .artbg{
+  background-color: #f5f0e9;
+  width: 100vw;
+  height: 100vh;
+  margin-left: -300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#shopping small{
+  font-size: 16px;
+  text-align: center;
+}
+#shopping h2{
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: 50px;
+}
+#shopping .more{
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+#shopping .artWarpper{
+  overflow: hidden;
+}
+#shopping .artWarpper .roller{
+  display: flex;
+}
+#shopping .arts .rolling-list{
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  padding-inline-end:100px;
+}
+.rolling_list .item { 
+  width: 250px; 
+  height: 180px;
+  border-radius: 20px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; 
+  background: #0339fb;
+  color: #fff;
+}
+.roller .rolling-list.original {
+  animation: rollingTop1 60s linear infinite;
+}
+.roller .rolling-list.clone {
+  animation: rollingTop2 60s linear infinite;
+}
+@keyframes rollingTop1 {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-100%); }
+  50.01% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+@keyframes rollingTop2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-200%); }
+}
+

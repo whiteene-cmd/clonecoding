@@ -1,3 +1,5 @@
+
+
 /* 버튼 로직 */
 (() => {
   const run = () => {
@@ -102,11 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
     li.addEventListener('mouseenter', () => activate(li));
     li.addEventListener('focusin',    () => activate(li)); // 키보드 접근성
   });
-
-  // 메뉴 영역을 벗어나도 유지하려면 이 부분은 비활성화
-  // menuArea?.addEventListener('mouseleave', () => {
-  //   subWrap?.classList.remove('on');
-  // });
 
   // 초깃값 동기화
   const initActive = document.querySelector('.menulist .menu.on');

@@ -1,0 +1,221 @@
+/* 공통 */
+#wrap {
+  padding: 0 40px;
+}
+h2,
+h3,
+small {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+}
+small {
+  font-size: 36px;
+}
+h2.fill {
+  font-size: 100px;
+  margin-bottom: 50px;
+  color: rgba(33, 30, 31, 0);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  background-image: linear-gradient(
+    to left,
+    rgba(33, 30, 31, 0) 70%,
+    rgba(33, 30, 31, 1) 20%
+  );
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: textFill 0.6s ease-in-out 0.8s forwards;
+  will-change: background-size;
+}
+@keyframes textFill {
+  to {
+    background-size: 100% 100%;
+  }
+}
+.secTitle span {
+  font-size: 36px;
+  font-family: "Bebas Neue", sans-serif;
+}
+main {
+  padding: 100px 260px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+/* imageArea */
+.imageWarp{
+    overflow: hidden;
+}
+.imageArea {
+  background: url(../img/imgi_11_contact-topbnr-bg.png) no-repeat center/120%;
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+  opacity: 0;
+}
+.imageArea .visual {
+  text-align: center;
+  color: #fff;
+}
+.imageArea .visual img {
+  margin-bottom: 15px;
+}
+.imageArea .visual p {
+  font-size: 26px;
+  line-height: 1.5;
+}
+
+/* qna */
+.qna .inquiry fieldset {
+  display: flex;
+  border: none;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+.qna .inquiry h3 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+.qna .inquiry fieldset label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+.qna .inquiry fieldset label input {
+  width: 24px;
+  height: 24px;
+}
+.qna .inquiry fieldset label input[type="radio"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: border 0.2s ease-in;
+  cursor: pointer;
+}
+.qna .inquiry fieldset label input[type="radio"]:checked {
+  border: 6px solid #c9ab81;
+}
+
+.namePhone > div > p,
+.email > p,
+.title > p,
+.message > p {
+  font-size: 28px;
+  font-family: "Bebas Neue", sans-serif;
+}
+.namePhone > div > p span,
+.email > p > span,
+.title > p span,
+.message > p span {
+  color: red;
+}
+.qna div > input {
+  border-bottom: 1px solid #adadad;
+}
+.qna div:first-child {
+  margin-top: 0;
+}
+.qna div > p {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.email .choiceMail {
+  display: flex;
+  align-items: end;
+  gap: 30px;
+}
+.email .choiceMail input {
+  width: 35%;
+}
+.email .choiceMail .mailAccodian {
+ position: relative;
+  width: 30%;
+  height: auto;
+  border-bottom: 1px solid #adadad;
+}
+.email .choiceMail .mailAccodian ul{
+    top: -48px;
+    position: absolute;
+    background-color: #fff;
+}
+.email .choiceMail .mailAccodian ul li {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #211e1f;
+  padding: 15px 30px;
+  box-sizing: border-box;
+}
+.email .choiceMail .mailAccodian ul li img {
+  width: 3.5%;
+  height: 3.5%;
+}
+.email .choiceMail .mailAccodian ul li:first-child {
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid #adadad;
+}
+.email .choiceMail .mailAccodian ul .panel:hover{
+  background-color: lightblue;
+}
+.email .choiceMail .mailAccodian ul .panel{
+    cursor: pointer;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  transition: max-height .28s ease, padding .28s ease, opacity .2s ease,;
+}
+.email .choiceMail .mailAccodian.open ul .panel{
+  max-height: 48px;          /* 항목 높이에 맞게 조절 */
+  padding-top: 15px;
+  padding-bottom: 15px;
+  opacity: 1;
+}
+.message textarea {
+  width: 100%;
+  height: 30vh;
+  border: 1px solid #adadad;
+  padding: 30px;
+  color: #000;
+}
+.namePhone {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.sendArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sendArea .privacyAgree {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  font-size: 20px;
+}
+.sendArea .privacyAgree input {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  margin-top: 12.5px;
+}

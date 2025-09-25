@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARTIST</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/headerFooter.css" />
+
+    <!-- gsap -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="js/headerFooter.js" defer></script>
+
+    <!-- 폰트어썸 -->
+    <script
+      src="https://kit.fontawesome.com/3da96badf7.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+    #wrap{
+            padding: 0 40px;
+    }
+      h2,
+      h3,
+      small {
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+      }
+      small {
+        font-size: 36px;
+      }
+      h3.fill {
+        font-size: 100px;
+        margin-bottom: 50px;
+        color: rgba(33, 30, 31, 0);
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #000;
+        background-image: linear-gradient(
+          to left,
+          rgba(33, 30, 31, 0) 70%,
+          rgba(33, 30, 31, 1) 20%
+        );
+        background-repeat: no-repeat;
+        background-size: 0% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: textFill 0.6s ease-in-out 0.8s forwards;
+        will-change: background-size;
+      }
+      @keyframes textFill {
+        to {
+          background-size: 100% 100%;
+        }
+      }
+      .secTitle span{
+        font-size: 36px;
+        font-family: "Bebas Neue", sans-serif;
+      }
+      main{
+        padding: 100px 260px;
+      }
+      main .innerBox{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        width: 100%;
+      }
+      main .innerBox li{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+      main .innerBox li img{
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      main .innerBox li .hoverTxt{
+        position: absolute;
+        inset: 0;
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        transform: translateX(100%);
+        background-color: rgba(0, 0, 0, 0.7);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        z-index: 10;
+        pointer-events: none;
+
+      }
+      main .innerBox li:hover .hoverTxt{
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: none;
+      }
+      main .innerBox li .hoverTxt p:first-child{
+        font-style: italic;
+        font-size: 30px;
+        color: #fff;
+      }
+      main .innerBox li .hoverTxt p:last-child{
+        font-size: 18px;
+        color: #fff;
+        font-family: "Bebas Neue", sans-serif;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+        <header>
+          <div class="logo">
+            <a href="index.html">
+              <h1 class="blind">갤러리 백상 로고</h1>
+            </a>
+          </div>
+          <nav>
+            <ul class="gnb">
+              <li class="gnbmain" data-hover="갤러리 소개">
+                <a href="baxsang_about.html"><span>ABOUT</span></a>
+                <div class="gnbInner">
+                  <ul class="gnbsub">
+                    <li data-hover="갤러리 소개">
+                      <a href="baxsang_about.html"
+                        ><span>GREETING</span
+                        ><img src="img/imgi_12_wht-arrow-next.png" alt=""
+                      /></a>
+                    </li>
+                    <li data-hover="갤러리 위치">
+                      <a href="baxsang_location.html"
+                        ><span>LOCATION</span
+                        ><img src="img/imgi_12_wht-arrow-next.png" alt=""
+                      /></a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="gnbmain" data-hover="진행전시">
+                <a href="baxsang_exhibition"><span>EXHIBITION</span></a>
+              </li>
+              <li class="gnbmain" data-hover="보유그림">
+                <a href="baxsang_collection.html"><span>COLLECTION</span></a>
+              </li>
+              <li class="gnbmain" data-hover="정보">
+                <a href="baxsang_insight.html"><span>MAGAZINE</span></a>
+                <div class="gnbInner">
+                  <ul class="gnbsub">
+                    <li data-hover="깊이보기">
+                      <a href="baxsang_insight.html"
+                        ><span>INSIGHT</span
+                        ><img src="img/imgi_12_wht-arrow-next.png" alt=""
+                      /></a>
+                    </li>
+                    <li data-hover="아티스트">
+                      <a href="baxsang_artist.html"
+                        ><span>ARTIST</span
+                        ><img src="img/imgi_12_wht-arrow-next.png" alt=""
+                      /></a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="gnbmain" data-hover="알림">
+                <a href="baxsang_notice.html"><span>INFO</span></a>
+                <div class="gnbInner">
+                  <ul class="gnbsub">
+                    <li data-hover="소식">
+                      <a href="baxsang_notice.html"
+                        ><span>NOTICE</span
+                        ><img src="img/imgi_12_wht-arrow-next.png" alt=""
+                      /></a>
+                    </li>
+                    <li data-hover="고객문의">
+                      <a href="baxsang_contect.html"
+                        ><span>CONTECT</span
+                        ><img src="img/imgi_12_wht-arrow-next.png" alt=""
+                      /></a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="gnbmain menuiIco">
+                <a href="#"><img src="img/imgi_1_hd-menubtn.svg" alt="" /></a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <div class="menuArea">
+          <div class="menuTop">
+            <div class="sublogo">
+              <h1 class="blind">서브로고</h1>
+            </div>
+            <img src="img/close_w.png" alt="닫기버튼" class="closeBtn" />
+          </div>
+          <div class="menulist">
+            <ul>
+              <li class="menu on">
+                <a href="baxsang_about.html">
+                  <small class="num">01</small>
+                  <p class="menuTitle" data-hover="갤러리 소개">ABOUT</p>
+                  <div class="menuPic01"></div>
+                </a>
+              </li>
+              <li class="menu">
+                <a href="baxsang_exhibition.html">
+                  <small class="num">02</small>
+                  <p class="menuTitle" data-hover="진행전시">EXHIBITION</p>
+                  <div class="menuPic02"></div>
+                </a>
+              </li>
+              <li class="menu">
+                <a href="baxsang_collection.html">
+                  <small class="num">03</small>
+                  <p class="menuTitle" data-hover="보유그림">COLLECTION</p>
+                  <div class="menuPic03"></div>
+                </a>
+              </li>
+              <li class="menu">
+                <a href="baxsang_magazine.html">
+                  <small class="num">04</small>
+                  <p class="menuTitle" data-hover="정보">MAGAZINE</p>
+                  <div class="menuPic04"></div>
+                </a>
+              </li>
+              <li class="menu">
+                <a href="baxsang_notice.html">
+                  <small class="num">05</small>
+                  <p class="menuTitle" data-hover="알림">INFO</p>
+                  <div class="menuPic05"></div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="menusub">
+            <div class="sub01">
+              <a href="baxsang_notice.html" data-hover="소식">NOTICE</a>
+              <a href="baxsang_contect.html" data-hover="고객문의">CONTECT</a>
+            </div>
+            <div class="sub02" data-hover="진행전시">
+              <a href="#">EXHIBITION</a>
+            </div>
+            <div class="sub03" data-hover="보유그림">
+              <a href="baxsang_collection.html">COLLECTION</a>
+            </div>
+            <div class="sub04">
+              <a href="baxsang_insight.html" data-hover="깊이보기">INSIGHT</a>
+              <a href="baxsang_artist.html" data-hover="아티스트">ARTIST</a>
+            </div>
+            <div class="sub05">
+              <a href="baxsang_about.html">GREETING</a>
+              <a href="baxsang_location.html">LOCATION</a>
+            </div>
+          </div>
+          <p class="backTxt">BAEXANG</p>
+        </div>
+        <!-- 헤더 끝 -->
+        <main>
+          <div class="secTitle">
+            <span>ART DESIGN IN BAEXANG</span>
+            <h3 class="fill">ARTIST</h3>
+          </div>
+          <ul class="innerBox">
+            <li>
+              <img src="img/imgi_17_artist.jpg" alt="구스타프 클림트" />
+              <a class="hoverTxt" href="#">
+                <p>구스타프 클림트</p>
+                <p>Gustav Klimt</p>
+              </a>
+            </li>
+            <li>
+              <img src="img/imgi_18_artist.jpg" alt="클로드 모네" />
+              <a class="hoverTxt" href="#">
+                <p>클로드 모네</p>
+                <p>Claude Mone</p>
+              </a>
+            </li>
+            <li>
+              <img src="img/imgi_19_artist.jpg" alt="빈센트 반 고흐" />
+              <a class="hoverTxt" href="#">
+                <p>빈센트 반 고흐</p>
+                <p>Vincent van Gogh</p>
+              </a>
+            </li>
+            <li>
+              <img src="img/imgi_20_artist.jpg" alt="구스타브 카유보트" />
+              <a class="hoverTxt" href="#">
+                <p>구스타브 카유보트</p>
+                <p>Gustave Caillebotte</p>
+              </a>
+            </li>
+            <li>
+              <img src="img/artist/imgi_7_aa6671ed_Paul-Cezanne+3.jpg" alt="폴 세잔" />
+              <a class="hoverTxt" href="#">
+                <p>폴 세잔</p>
+                <p>Paul Cézanne</p>
+              </a>
+            </li>
+            <li>
+              <img src="img/artist/imgi_8_c3a1f16e_Egon_Schiele+2.jpg" alt="에곤 쉴레" />
+              <a class="hoverTxt" href="#">
+                <p>에곤 쉴레</p>
+                <p>Egon Schiele</p>
+              </a>
+            </li>
+            <li>
+              <img src="img/artist/imgi_9_97dd3cd1_Edgar_Degas.jpg" alt="에드가 드가" />
+              <a class="hoverTxt" href="#">
+                <p>에드가 드가</p>
+                <p>Edgar Degas</p>
+              </a>
+            </li>
+            <li>
+              <img src="img/artist/imgi_10_63a7aa28_Henri_Matisse+2.jpg" alt="앙리 마티스" />
+              <a class="hoverTxt" href="#">
+                <p>앙리 마티스</p>
+                <p>Henri Matisse</p>
+              </a>
+            </li>
+            <li>
+              <img src="img/artist/imgi_11_0c39afbf_Paul_Gauguin.png" alt="폴 고갱" />
+              <a class="hoverTxt" href="#">
+                <p>폴 고갱</p>
+                <p>Paul Gauguin</p>
+              </a>
+            </li>
+            <li>
+              <img src="img/artist/imgi_12_8c40f7db_Paul_Signac.jpg" alt="폴 시냐크" />
+              <a class="hoverTxt" href="#">
+                <p>폴 시냐크</p>
+                <p> Paul Signac</p>
+              </a>
+            </li>
+            <li>
+              <img src="img/artist/imgi_14_0c09223c_6512314b_artist-view-profile.png" alt="폴 고갱" />
+              <a class="hoverTxt" href="#">
+                <p>알폰스 무하</p>
+                <p>Alphonse Mucha</p>
+              </a>
+            </li>
+          </ul>
+        </main>
+    </div>
+
+    <!-- 푸터 시작 -->
+    <footer>
+      <div class="innerBox">
+        <div class="fooLeft">
+          <div class="logo">
+            <a href="index.html">
+              <h1 class="blind">logo</h1>
+            </a>
+          </div>
+          <div class="textBox">
+            <div class="privacy">
+              <p>개인정보 처리 방침</p>
+              <span>이용약관</span>
+            </div>
+            <div class="owner">
+              <p>대표자: 권순상</p>
+              <span>사업자 등록 번호:137-81-30071</span>
+            </div>
+            <div class="address">
+              <p>주소:경기도 고양시 일산동구 산황로 178-15</p>
+              <p>TEL : 070-4156-9541</p>
+              <span>FAX : 031-977-9540</span>
+            </div>
+          </div>
+          <div class="accordion">
+            <ul class="sitego">
+              <li>
+                <span>Family Site</span>
+                <img src="img/down-arrow_op3.png" alt="" class="angle" />
+              </li>
+              <li class="shop">
+                <span>백상쇼핑몰</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="fooRight">
+          <h2>CONTECT US</h2>
+          <div class="write">
+            <div class="namephone">
+              <input type="text" placeholder="NAME" />
+              <input type="text" placeholder="PHONE" />
+            </div>
+            <input type="text" placeholder="E-MAIL" />
+            <input type="text" placeholder="TITLE" />
+            <textarea type="text">
+              MESSAGE
+            </textarea>
+          </div>
+          <div class="more">
+            <i class="fa-solid fa-plus"></i>
+            <p>VIEW MORE</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <aside class="scrollUp">
+      <p>문의하기<i class="fa-solid fa-comment-dots"></i></p>
+      <i class="fa-solid fa-arrow-up"></i>
+    </aside>
+  </body>
+</html>

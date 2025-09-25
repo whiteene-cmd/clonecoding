@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 #wrap {
-  overflow: hidden;
   padding: 0 40px;
 }
 
@@ -253,38 +252,6 @@ header nav .gnb .gnbInner .gnbsub>li>a>img {
   display: inline-block;
   line-height: 1.1;
 }
-
-.menuArea .menulist .menu .menuTitle::before {
-  content: attr(data-hover);
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  color: #fff;
-  transition: opacity 0.2s ease;
-  white-space: nowrap;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* li.on 상태에서 본문은 투명, 한글 레이어만 보이도록 */
-.menuArea .menulist .menu.on .menuTitle {
-  color: transparent;
-}
-
-.menuArea .menulist .menu.on .menuTitle::before {
-  opacity: 1;
-}
-
-.menuArea .menulist .menu.on .menuTitle:hover {
-  color: transparent;
-  /* 영문 숨기기 */
-}
-
-.menuArea .menulist .menu.on .menuTitle:hover::before {
-  opacity: 1;
-  /* 한글 노출 */
-}
-
 /* 밑줄*/
 .menuArea .menulist .menuTitle::after {
   content: "";

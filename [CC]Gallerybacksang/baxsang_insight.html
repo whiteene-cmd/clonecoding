@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/insight.css" />
     <link rel="stylesheet" href="css/headerFooter.css">
 
+    <!-- gsap -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="js/insight.js" defer></script>
     <script src="js/headerFooter.js" defer></script>
 
@@ -168,15 +171,42 @@
       <!-- 헤더 끝 -->
     </div>
     
-    <div class="pagrtitle">
-        
-    </div>
-    <section id="news">
-
-    </section>
-
-
-
+    <main>
+      <div class="pagetitle">
+          <small>ART DESIGN IN BAEXANG</small>
+          <h2 class="fill">LOCATION</h2>
+      </div>
+      <div id="news">
+        <ul class="newsList">
+          <li class="listup">
+            <a href="#">
+              <span class="newsCard">NEWS</span>
+              <figure><img src="" alt="" class="newsImage"></figure>
+              <div class="textBox">
+                <p class="reporter"></p>
+                <p class="newsTitle"><strong class="date"></strong></p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <section id="shopping">
+        <div class="artbg">
+          <small>백상의 다양한 작품들을 만나보세요</small>
+          <h2>BAEXANG ACTIVITY</h2>
+          <div class="artWarpper">
+            <div class="arts roller">
+              <ul class="rolling-list">
+                <li class="item"><img src="http://bxgallery.kr/images/sub/insight-sec02-img02.png" alt=""></li>
+                <li class="item"><img src="http://bxgallery.kr/images/sub/insight-sec02-img01.png" alt=""></li>
+                <li class="item"><img src="http://bxgallery.kr/images/sub/insight-sec02-img04.png" alt=""></li>
+                <li class="item"><img src="http://bxgallery.kr/images/sub/insight-sec02-img03.png" alt=""></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- 푸터 시작 -->
     <footer>
@@ -238,8 +268,6 @@
       <p>문의하기<i class="fa-solid fa-comment-dots"></i></p>
       <i class="fa-solid fa-arrow-up"></i>
     </aside>
-    <!-- gsap -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    
 </body>
 </html>
