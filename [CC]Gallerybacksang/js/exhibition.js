@@ -48,7 +48,16 @@ window.addEventListener('DOMContentLoaded',()=>{
             }
         }
     )
-})
+}),
+document.querySelectorAll('.innerBox li').forEach(li => {
+      const titleEl = li.querySelector('.title');
+      const a = li.querySelector('a');
+      if (!titleEl || !a) return;
+
+      const title = titleEl.textContent.trim();
+      // 안전하게 넘기기
+      a.href = `baxsang_exhibitionNews.html?title=${encodeURIComponent(title)}`;
+    });
 });
 
 

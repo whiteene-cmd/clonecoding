@@ -47,6 +47,7 @@ document.querySelector(".roller").appendChild(clone);
 roller.classList.add("original");
 clone.classList.add("clone");
 
+/* 페이지 전체를 json으로 */
 document.addEventListener("DOMContentLoaded", async () => {
   const list =
     document.querySelector("#news .newsList") ||
@@ -99,5 +100,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
     list.appendChild(li);
+
+  //상세페이지로 넘어갈때 클래스 매핑해서 제이슨파일 불러오기
+  const cleanDate = (s) => String(s || '').replace(/^\((.*)\)$/, '$1').trim();
+  const dateForList = cleanDate(item.date);
+  const titleForList = String(item.newsTitle || '').trim();
+  const titleForDetail = dateForList ? `${titleForList} (${dateForList})` : titleForList;
+
+  const a = li.querySelector('a');
+  if (a) {
+    a.href = `baxsang_insight_info.html?title=${encodeURIComponent(titleForDetail)}`;
+    a.setAttribute('aria-label', titleForDetail);
+  }
   });
 });

@@ -3,21 +3,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EXHIBITION</title>
+    <title>INSIGHT</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/headerFooter.css" />
-    <link rel="stylesheet" href="css/exhibition.css" />
 
-    <script src="js/headerFooter.js" defer></script>
     <!-- gsap -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script type="module" src="js/exhibitionNews.js"></script>
+    <script src="js/headerFooter.js" defer></script>
+
     <!-- 폰트어썸 -->
     <script
       src="https://kit.fontawesome.com/3da96badf7.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="js/exhibition.js" defer></script>
+    <style>
+      h2,
+      strong,
+      small {
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+      }
+      main {
+        padding: 100px 300px;
+      }
+      small {
+        font-size: 36px;
+      }
+      h2.fill {
+        font-size: 100px;
+        margin-bottom: 50px;
+        color: rgba(33, 30, 31, 0);
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #000;
+        background-image: linear-gradient(
+          to left,
+          rgba(33, 30, 31, 0) 70%,
+          rgba(33, 30, 31, 1) 20%
+        );
+        background-repeat: no-repeat;
+        background-size: 0% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: textFill 0.6s ease-in-out 0.8s forwards;
+        will-change: background-size;
+      }
+      @keyframes textFill {
+        to {
+          background-size: 100% 100%;
+        }
+      }
+      main .exhibitions{
+        padding-bottom: 100px;
+        border-bottom: 2px solid #000;
+      }
+      main .exhibitions img{
+        max-width: 100%;
+        margin-bottom: 80px;
+      }
+      main .exhibitions .textBox .title{
+        font-size: 50px;
+        margin-bottom: 30px;
+      }
+      main .exhibitions .textBox .descWrap{
+        display: grid;
+        grid-template-columns: 1.5fr 0.9fr;
+      }
+      .left, .right{
+        padding: 0 30px;
+      }
+      .left{
+        padding-left: 0;
+        font-size: 18px;
+        color: #8b8b8b;
+        border-right: 2px solid #000;
+      }
+      .right ul li{
+        display: flex;
+        gap: 15px;
+        font-size: 22px;
+        margin-bottom: 20px;
+        line-height: 1;
+      }
+      .right ul li:last-child{
+        margin-bottom: 0;
+      }
+      .right p{
+        font-family: "Bebas Neue", sans-serif;
+      }
+      .right span{
+        font-size: 18px;
+        color: #8b8b8b;
+      }
+    </style>
   </head>
   <body>
     <div id="wrap">
@@ -168,105 +248,50 @@
         <p class="backTxt">BAEXANG</p>
       </div>
       <!-- 헤더 끝 -->
+    </div>
 
-      <article>
-          <small>ART DESIGN IN BAEXANG</small>
-          <h2 class="fill">EXHIBITION</h2>
-      </article>
-      <section id="onview">
-        <h3><span>ON VIEW</span> 진행중</h3>
-        <div class="innerBox">
-          <img src="img/exhibition/imgi_7_9dd68d13_ECA784ED9689ECA491EC9DB4EBAFB8ECA78028129.jpg" alt="인상주의 기획전"/>
-          <div class="textBox">
-            <h4>클림트&고흐 그리고 인상주의展</h4>
-            <span>Jul 11 - Dec 31, 2025</span>
-            <p class="tminfo">고양시 일산동구에 위치한 백상갤러리가 지난 7월 11일부터 선보이고 있는 ‘클림트 & 고흐 레플리카 특별전’은 인상주의와 후기 인상주의를 대표하는 4인의 거장, 클림트, 반 고흐, 카유보트, 모네의 작품을 한자리에서 감상할 수 있는 드문 기회입니다.
-
-이번 전시에서는 특히 빈센트 반 고흐의 〈해바라기〉 시리즈 7점을 모두 함께 감상할 수 있습니다. 이 중 일부는 현재 실물로 존재하지 않으며, 일본 오츠카 미술관에서 정밀하게 재현된 고화질 레플리카로만 남아 있어 국내에서는 보기 힘든 구성입니다. 또한 반 고흐의 자화상 시리즈도 함께 전시되어, 그의 고독과 예술혼을 직접 마주할 수 있습니다.
-
-구스타프 클림트의 대표작 〈키스〉 역시 실제 크기로 제작되어 전시되며, 황금빛 금박 장식과 섬세한 문양을 생생히 감상할 수 있습니다. 참고로 클림트의 〈키스〉 실물은 오스트리아 벨베데레 궁전을 한 번도 떠난 적이 없어, 이처럼 정밀한 실물 크기 재현을 국내에서 직접 관람할 수 있다는 점만으로도 전시는 매우 특별한 의미를 지닙니다.
-
-전시장에는 인상주의의 시작을 알린 클로드 모네의 빛과 자연을 포착한 풍경화, 파리의 일상을 감각적으로 그려낸 구스타프 카유보트의 사실주의 회화도 함께 전시되어 있습니다. 모두 실제 작품을 그대로 재현한 고급 아트 레플리카로, 작품의 질감과 색채를 충실히 전달합니다.
-
-전시는 12월 31일까지 이어지며, 방문객들은 1층에 마련된 카페 ‘오르세커피’에서 휴식을 즐기며 예술과 커피를 동시에 만끽할 수 있습니다. 백상갤러리에서는 “이번 전시를 통해 관람객들이 작품의 아름다움뿐 아니라 예술을 통한 위로와 회복을 함께 경험하길 바란다”고 전했습니다.
-
-*문의 : 070-4156-9541                        
-            </p>
+    <main>
+      <div class="pagetitle">
+        <small>ART DESIGN IN BAEXANG</small>
+        <h2 class="fill">EXHIBITION</h2>
+      </div>
+      <div class="exhibitions">
+        <img
+          src=""
+          alt=""
+          class="imgURL"
+        />
+        <div class="textBox">
+          <p class="title"></p>
+          <div class="descWrap">
+              <div class="left">
+                <p class="desc"></p>
+              </div>
+              <div class="right">
+                <ul>
+                  <li>
+                    <p>CATEGORY</p>
+                    <span class="category"></span>
+                  </li>
+                  <li>
+                    <p>Exhibition period</p>
+                    <span class="exhibitionPeriod"></span>
+                  </li>
+                  <li>
+                    <p>ARTIST</p>
+                    <span class="aritst"></span>
+                  </li>
+                  <li>
+                    <p>SHARE</p>
+                    <span> - </span>
+                  </li>
+                </ul>
+              </div>
           </div>
         </div>
-      </section>
-      <section id="upcoming">
-        <h3><span>UPCOMING</span> 진행 예정</h3>
-        <div class="innerBox">
-            <ul>
-                <li>
-                    <a href="">
-                      <img src="img/exhibition/imgi_10_007e6b08_2025071003423383917280.png" alt="특별수장고">
-                      <div class="desc">
-                          <p class="title">특별수장고: 국립현대미술관 드로잉·일본 현대 판화 소장품</p>
-                          <p class="date">Jul 22, 2025 - Dec 31, 2027</p>
-                      </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                      <img src="img/exhibition/imgi_11_89ac2a53_2025030501473569813666.png" alt="올해의 작가상">
-                      <div class="desc">
-                          <p class="title">올해의 작가상 2025</p>
-                          <p class="date">Aug 29, 2025 - Feb 01, 2026</p>
-                      </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                      <img src="img/exhibition/imgi_9_6134daca_600.jpg" alt="오랑주리">
-                      <div class="desc">
-                          <p class="title">오랑주리 - 오르세미술관 특별전</p>
-                          <p class="date">Sep 20, 2025 - Jan 25, 2026</p>
-                      </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-      </section>
-      <section id="past">
-        <h3><span>PAST</span> 지난 전시</h3>
-        <div class="innerBox">
-            <ul>
-                <li>
-                    <a href="">
-                      <img src="img/exhibition/imgi_14_cccc1e1a_EBB680EC82B0EC8B9CEBA6BDEBAFB8EC88A0EAB480+28129.jpg" alt="소장자원 세미나">
-                      <div class="desc">
-                          <p class="title">2023 소장자원 학술 세미나 <보이지 않는 실천, 보이는 미술관 (In)visible Museum></p>
-                          <p class="date">Nov 03  - Nov 03, 2023</p>
-                      </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                      <img src="img/exhibition/imgi_15_66d1f585_3E1848BE185A7E186AF3E1848BE185B5E186AB.jpg" alt="소장자원 세미나">
-                      <div class="desc">
-                          <p class="title">3개의 열정, 3인의 인상파 거장을 마주하다. </p>
-                          <p class="date">Jan 01  - Jul 10, 2025</p>
-                      </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                      <img src="img/exhibition/imgi_16_0f9d3daf_E18486E185A9E18482E185A62C+E18492E185A3E186BCE18480E185B5E18485E185B3E186AF+E18486E185A1E186ABE18482E185A1E18483E185A1+E1848CE185A5E186AB.jpg" alt="소장자원 세미나">
-                      <div class="desc">
-                          <p class="title">모네, 향기를 만나다展</p>
-                          <p class="date">Mar 28  - May 17, 2024</p>
-                      </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-      </section>
-      <section id="postiong">
-        <h3><span>EXHIBITION</span> 전시포스팅</h3>
-      </section>
-    </div>
+      </div>
+    </main>
+
     <!-- 푸터 시작 -->
     <footer>
       <div class="innerBox">

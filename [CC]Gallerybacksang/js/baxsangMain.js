@@ -1,9 +1,12 @@
 gsap.registerPlugin(ScrollTrigger);
 
-/* gsap.fromTo(".revealClip",
-  { clipPath: "inset(0 100% 0 0)", opacity: 1 },
-  { clipPath: "inset(0 0% 0 0)", duration: 1.2, ease: "power2.out" }
-); */
+//기사가 없는 건 페이지를 찾을 수 없다고 문구 띄우기
+document.addEventListener("click", function(e){
+  const notFound = e.target.closest("[data-notfound]");
+  if(!notFound)return
+  alert('이미 삭제되었거나 없는 페이지입니다.')
+});
+
 
 window.addEventListener("DOMContentLoaded",()=>{
   gsap.utils.toArray(".revealClip").forEach((el) => {
